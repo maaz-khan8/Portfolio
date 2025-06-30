@@ -15,8 +15,8 @@ const App: React.FC = () => {
     localStorage.getItem('theme') === 'dark' ? 'dark' : 'light'
   );
 
-  // Set basename for BrowserRouter using environment variable
-  const basename = process.env.REACT_APP_BASENAME || '/';
+  // Set basename for BrowserRouter: '/Portfolio' in production, '/' in development
+  const basename = process.env.NODE_ENV === 'production' ? '/Portfolio' : '/';
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', theme === 'dark');
