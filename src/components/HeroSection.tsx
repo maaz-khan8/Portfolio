@@ -4,10 +4,13 @@ import { motion } from 'framer-motion';
 const HeroSection: React.FC = () => {
   const [showResumeInfo, setShowResumeInfo] = useState(false);
 
+  // Use PUBLIC_URL for correct path in all environments
+  const resumeUrl = `${process.env.PUBLIC_URL}/resume.pdf`;
+
   const handleResumeDownload = () => {
     // Download the PDF resume
     const link = document.createElement('a');
-    link.href = '/resume.pdf';
+    link.href = resumeUrl;
     link.download = 'resume.pdf';
     document.body.appendChild(link);
     link.click();
@@ -16,7 +19,7 @@ const HeroSection: React.FC = () => {
 
   const handleResumeView = () => {
     // Open the PDF resume in a new tab
-    window.open('/resume.pdf', '_blank');
+    window.open(resumeUrl, '_blank');
   };
 
   const handleResumeRequest = () => {
