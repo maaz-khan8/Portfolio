@@ -109,12 +109,7 @@ const ContactSection: React.FC = () => {
             </form>
           )}
           <div className="mt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <div>
-              <div className="text-gray-700 dark:text-gray-300">
-                Email: <span className="text-blue-600 dark:text-blue-400 font-medium">maaz.khan20307@gmail.com</span>
-              </div>
 
-            </div>
             <div className="flex gap-4 text-2xl">
               <a 
                 href="https://linkedin.com" 
