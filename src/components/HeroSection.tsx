@@ -29,14 +29,24 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-    <section id="hero" className="flex flex-col md:flex-row items-center justify-between min-h-[80vh] px-6 py-16 md:py-32 bg-gradient-to-br from-white via-blue-50 to-blue-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-      <div className="flex-1 flex flex-col gap-6">
+    <section
+      id="hero"
+      className="relative flex flex-col md:flex-row items-center justify-between min-h-screen px-6 py-16 md:py-32 overflow-hidden"
+      style={{
+        backgroundImage: `url(${process.env.PUBLIC_URL}/pic1.jpg)`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      {/* Overlay for readability */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-blue-50/80 to-blue-100/80 dark:from-gray-900/90 dark:via-gray-800/80 dark:to-gray-900/80 pointer-events-none z-0" />
+      <div className="flex-1 flex flex-col gap-6 relative z-10">
         <motion.h1 initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="text-4xl md:text-6xl font-extrabold text-gray-900 dark:text-white mb-2">
-          Hi, I'm <span className="text-blue-600 dark:text-blue-400">Maaz Khan</span>
+          Hi, I'm Maaz Khan
         </motion.h1>
-        <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.7 }} className="text-lg md:text-2xl text-gray-700 dark:text-gray-300 mb-4">
-          A motivated final-year Computer Science student passionate about Web Development, AI, and Data Science.
-        </motion.p>
+        <motion.h2 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15, duration: 0.7 }} className="text-xl md:text-3xl font-semibold text-blue-700 dark:text-blue-400 mb-4">
+          I transform ideas into interactive interfaces
+        </motion.h2>
         <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.7 }} className="text-md text-gray-600 dark:text-gray-400 mb-4">
           Based in Karachi, Pakistan | FAST-NUCES
         </motion.p>
@@ -77,12 +87,6 @@ const HeroSection: React.FC = () => {
           </motion.div>
         )}
       </div>
-      <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.4, duration: 0.7 }} className="flex-1 flex justify-center mt-10 md:mt-0">
-        {/* Replace with your image or animation */}
-        <div className="w-48 h-48 md:w-64 md:h-64 bg-gradient-to-tr from-blue-400 to-purple-500 dark:from-blue-700 dark:to-purple-700 rounded-full shadow-lg flex items-center justify-center">
-          <span className="text-white text-4xl font-bold">👨‍💻</span>
-        </div>
-      </motion.div>
     </section>
   );
 };

@@ -113,9 +113,7 @@ const ContactSection: React.FC = () => {
               <div className="text-gray-700 dark:text-gray-300">
                 Email: <span className="text-blue-600 dark:text-blue-400 font-medium">maaz.khan20307@gmail.com</span>
               </div>
-              <div className="text-gray-700 dark:text-gray-300">
-                Phone: <span className="text-blue-600 dark:text-blue-400 font-medium">03112940398</span>
-              </div>
+
             </div>
             <div className="flex gap-4 text-2xl">
               <a 

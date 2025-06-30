@@ -3,63 +3,63 @@ import React from 'react';
 const projects = [
   {
     title: 'Employee Management System',
-    image: 'https://via.placeholder.com/400x200',
+    image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAh1BMVEVRK9T///9EEtLMxfBKHtOai+M/ANFCDdLk4PfSy/LZ0/RPKNRYM9bx7/tHGdLJwvCgkeWyp+mVhOLt6vpMI9Pf2vZ+aN2qnOiOfOCrn+iHc9/n4/jBt+7b1fWKd+B1XdtkRti6r+z5+P1yWNtePdeTguJ6YtxnS9htUtr29P23q+upneeDbt7xWqHzAAADn0lEQVR4nO3a7VraMBiA4bSUFKgUxagoooKfOM//+KaMvgk0NFxOXM2e+yeWJc+sTWlQCgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4H+SpSJrOMxUB5Xuq2XaaOONQaV/5L8OvOx31vrj3WOYq+qwE+egct5p0n9PNJN+4zGO18Mkpv3EOip2HZYdV8fMcvtqPk0a6ff/hMvmQxy9fNfoX1c40OHCgVvYCxde7F149g2Fyc2uP8VoChfpjvM0msLkesco8RQm9yb2wlP/xebzhe26ln648K5KocLhyKOzWg87W6/a39nW0SffsB6ueBfFUGFf73lPk2cy0HjrPQe6p6kXznznaahwsO8ZVhzJQN2mu8SvUy9MJp6RoyiU2S6y+nkaReFYhvYsilEU3tjztb4oRlHYtWMPaxebKAovtF2cL9Otw6IovCz1UEZ/2LrYRFJobmX0s63zNIrC95um/FqGf9y8w4ilsEgXMv7mohhLocpuZPzRxnkaTaHSA5nAk7soxlNY7FgU4ylUpaQkJ86iGP70VOd9WvDvC5W2z0Dv7MUmVLg4rRle+RJbUGieZQrOoviZpxi+T2FtKFTpq8zBPuaPqlDl9ubNVOdpXIXmSSbRqc7TuAqVts/DztdXi8gKCyOzWK57IitU2aNM4/XPoviZwscWFyo9k3ncrc7TUGFv3N12/Ox78NqWQmcevdXFJnxPk9V4t7HaUuhuqHQ/Xo/ovrTi3LypIspC8yIz6esoC1U+l6mcZ1EWKr2sfvK+KGbdCAuzN5nLPI+yUOmOTOa5HMdYWBQymamexFio7C8u6T5FWaj0mUznJc7C4kGmM4qzUKX174q0vrAwZuOOuLlQ6dMfVljkxfnbg/skM1Bo7n9WoTla9UxvbUyg0N2Oair0fXryfoA6bKGRC8dEakKFRWm3oxoKe5OxR3d7o/XQhc5jQnmcHSpU2dU+hTuc1x57H7Qwm9ihR9WeRLBQ6c3vFLW5sHT+pGRjKVxYqB9TmNrHoMli/0JVdt1Jt7mwPLFDy3c59yhU2g1pc2FxZ4c+rv71fQqN88ZWFzq7SlPZN9unUKXOb3/W5kKl5+tZ2qU4HS2HK8tfDQPq6XBt2XF2htPBcthk8eQpXFQ/HB/iri1/uZ6djd60sxCn1aZ043i57F1vfB8s9WxuBza6C/nhYW68TZnnqf/r+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/Ei/AfHYTPUXy/PDAAAAAElFTkSuQmCC',
     description: 'Developed a role-based employee management system with secure login, session management, and CRUD operations using Grid View and ADO.NET. Designed personalized dashboards for Admin, HR Manager, and Employees.',
     technologies: '.NET Webform, SQL Server, ADO.NET',
     github: 'https://github.com/maaz-khan8/EmployeeManagementSystem',
   },
   {
     title: 'Car Bazaar',
-    image: 'https://via.placeholder.com/400x200',
+    image: 'https://play-lh.googleusercontent.com/R9MI1tHjJSKBc1C2Z5fgGdIRYZuKpGwtdmst_sh72y1cyMiHAkI5di5BOjToPAHWUcaI',
     description: 'Developed a responsive frontend (React, Tailwind CSS) and efficient backend (Node.js, Express, PostgreSQL) for vehicle trading and comparison. Engineered user authentication, admin panel, and automated email notifications.',
     technologies: 'React, Node.js, Express, PostgreSQL, Tailwind CSS',
     github: 'https://github.com/maaz-khan8/CarBazaar',
   },
   {
     title: 'Amazon Clone',
-    image: 'https://via.placeholder.com/400x200',
+    image: 'https://www.iccr.org/wp-content/uploads/2024/05/amazon-shutterstock_655556107-scaled.jpg',
     description: 'Built a responsive Amazon clone with modern UI/UX design using HTML and CSS. Implemented product listings, shopping cart functionality, and user interface components similar to the original Amazon platform.',
     technologies: 'HTML, CSS, Responsive Design',
     github: 'https://github.com/maaz-khan8/Amazon_Clone',
   },
   {
     title: 'Netflix Clone',
-    image: 'https://via.placeholder.com/400x200',
+    image: 'https://i.pcmag.com/imagery/reviews/05cItXL96l4LE9n02WfDR0h-5..v1582751026.png',
     description: 'Created a Netflix clone with responsive design and modern UI components. Implemented movie/show listings, navigation, and landing page similar to Netflix with focus on user experience and visual appeal.',
     technologies: 'HTML, CSS, Responsive Design',
     github: 'https://github.com/maaz-khan8/Netflix_Clone',
   },
   {
     title: 'Todo List React',
-    image: 'https://via.placeholder.com/400x200',
+    image: 'https://www.w3schools.com/whatis/img_react.jpg',
     description: 'Developed a dynamic todo list application using React with features like add, delete, edit, and mark tasks as complete. Implemented local storage for data persistence and responsive design.',
     technologies: 'React, JavaScript, Local Storage',
     github: 'https://github.com/maaz-khan8/Todolist_React',
   },
   {
     title: 'Hospital Management System',
-    image: 'https://via.placeholder.com/400x200',
+    image: 'https://cacm.acm.org/wp-content/uploads/2025/01/012225.BLOG_.21st-Century-C-G.jpg',
     description: 'Developed a comprehensive hospital management system using C++ with features for patient registration, doctor management, appointment scheduling, and medical records tracking.',
     technologies: 'C++, Data Structures, File Handling',
     github: 'https://github.com/maaz-khan8/Hospital_management_system',
   },
   {
     title: 'ScoreBoard Project',
-    image: 'https://via.placeholder.com/400x200',
+    image: 'https://d2nzy1qhita6w.cloudfront.net/media/magefan_blog/Beginner-learning-C-programming-in-10-days-with-a-coding_guide.jpeg',
     description: 'Built a scoreboard system using C programming for tracking and displaying game scores, player statistics, and match results with real-time updates and data persistence.',
     technologies: 'C, Data Structures, File I/O',
     github: 'https://github.com/maaz-khan8/ScoreBoardProject',
   },
   {
     title: 'Cab Management System',
-    image: 'https://via.placeholder.com/400x200',
+    image: 'https://cacm.acm.org/wp-content/uploads/2025/01/012225.BLOG_.21st-Century-C-G.jpg',
     description: 'Developed a simulation of a taxi dispatch system featuring user authentication, ride booking, and fare generation. Implemented Dijkstra\'s algorithm for efficient route planning using graph structures.',
     technologies: 'C++, Data Structures, Algorithms',
     github: 'https://github.com/maaz-khan8/Cab_Management_System',
   },
   {
     title: 'Proxy Server',
-    image: 'https://via.placeholder.com/400x200',
+    image: 'https://miro.medium.com/v2/resize:fit:803/1*E4lFl0-xX1L5uZXIyBQdsQ.jpeg',
     description: 'Developed a Python-based proxy server to manage client-server communication. Implemented request routing and support for multiple concurrent connections to improve performance.',
     technologies: 'Python, Networking, Multi-threading',
     github: 'https://github.com/maaz-khan8/Proxy_Server',
@@ -81,7 +81,7 @@ const ProjectsSection: React.FC = () => {
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-110" 
+                  className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-110 border-b-4 border-blue-100 dark:border-blue-900 bg-gray-100 dark:bg-gray-800" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>

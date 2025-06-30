@@ -7,12 +7,12 @@ const skills = [
   { name: 'C', icon: React.createElement(SiC as React.ComponentType<any>, { className: "text-blue-600" }), level: 95, category: 'Languages' },
   { name: 'C++', icon: React.createElement(SiCplusplus as React.ComponentType<any>, { className: "text-blue-700" }), level: 90, category: 'Languages' },
   { name: 'Python', icon: React.createElement(FaPython as React.ComponentType<any>, { className: "text-blue-400" }), level: 85, category: 'Languages' },
-  { name: 'JavaScript', icon: React.createElement(FaJs as React.ComponentType<any>, { className: "text-yellow-400" }), level: 88, category: 'Languages' },
+  { name: 'JavaScript', icon: React.createElement(FaJs as React.ComponentType<any>, { className: "text-yellow-400" }), level: 75, category: 'Languages' },
   
   // Frameworks
-  { name: 'React', icon: React.createElement(FaReact as React.ComponentType<any>, { className: "text-blue-500" }), level: 92, category: 'Frameworks' },
-  { name: '.NET MVC', icon: React.createElement(SiDotnet as React.ComponentType<any>, { className: "text-purple-600" }), level: 90, category: 'Frameworks' },
-  { name: '.NET Webform', icon: React.createElement(SiDotnet as React.ComponentType<any>, { className: "text-purple-700" }), level: 85, category: 'Frameworks' },
+  { name: 'React', icon: React.createElement(FaReact as React.ComponentType<any>, { className: "text-blue-500" }), level: 75, category: 'Frameworks' },
+  { name: '.NET MVC', icon: React.createElement(SiDotnet as React.ComponentType<any>, { className: "text-purple-600" }), level: 75, category: 'Frameworks' },
+  { name: '.NET Webform', icon: React.createElement(SiDotnet as React.ComponentType<any>, { className: "text-purple-700" }), level: 75, category: 'Frameworks' },
   { name: 'Tailwind CSS', icon: React.createElement(SiTailwindcss as React.ComponentType<any>, { className: "text-cyan-500" }), level: 88, category: 'Frameworks' },
   
   // Databases
