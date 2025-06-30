@@ -38,7 +38,7 @@ const education = [
 
 const ExperienceSection: React.FC = () => {
   return (
-    <section id="experience" className="py-20 px-6 bg-gray-50 dark:bg-gray-800">
+    <section id="experience" className="py-16 px-4 sm:px-6 bg-gray-50 dark:bg-gray-800">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold mb-10 text-blue-700 dark:text-blue-400">Experience & Education</h2>
         

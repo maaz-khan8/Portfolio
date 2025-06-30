@@ -47,7 +47,7 @@ const SkillsSection: React.FC = () => {
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold mb-12 text-blue-700 dark:text-blue-400 text-center">Technical Skills</h2>
         
-        <div className="grid gap-8 lg:grid-cols-2">
+        <div className="grid gap-6 sm:gap-8 grid-cols-1 lg:grid-cols-2">
           {categories.map((category) => (
             <div key={category} className="group bg-gray-50 dark:bg-gray-800 rounded-xl p-6 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 border border-transparent hover:border-blue-200 dark:hover:border-blue-800">
               <h3 className="text-xl font-semibold mb-6 text-gray-800 dark:text-gray-200 border-b border-gray-200 dark:border-gray-700 pb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">

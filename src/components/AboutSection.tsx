@@ -6,7 +6,7 @@ import { FaDatabase } from 'react-icons/fa';
 const AboutSection: React.FC = () => {
   return (
     <section id="about" className="py-20 px-6 bg-white dark:bg-gray-900">
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
+      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-12 text-center md:text-left">
         <div className="transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-blue-400 dark:hover:border-blue-500 w-48 h-64 rounded-xl shadow-lg border-4 border-blue-200 dark:border-blue-700 bg-white dark:bg-gray-800 overflow-hidden">
           <img src={process.env.PUBLIC_URL + '/pic2.jpg'} alt="Profile" className="w-full h-full object-cover rounded-xl" />
         </div>
