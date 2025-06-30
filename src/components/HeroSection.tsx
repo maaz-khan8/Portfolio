@@ -7,7 +7,7 @@ const HeroSection: React.FC = () => {
   const handleResumeDownload = () => {
     // Download the PDF resume
     const link = document.createElement('a');
-    link.href = 'public/resume.pdf';
+    link.href = '/resume.pdf';
     link.download = 'resume.pdf';
     document.body.appendChild(link);
     link.click();
@@ -16,7 +16,7 @@ const HeroSection: React.FC = () => {
 
   const handleResumeView = () => {
     // Open the PDF resume in a new tab
-    window.open('public/resume.pdf', '_blank');
+    window.open('/resume.pdf', '_blank');
   };
 
   const handleResumeRequest = () => {
