@@ -70,7 +70,6 @@ const HeroSection: React.FC = () => {
             Download as PDF
           </button>
         </div>
-        
         {/* Resume Info Popup */}
         {showResumeInfo && (
           <motion.div 

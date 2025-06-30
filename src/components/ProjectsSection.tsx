@@ -16,6 +16,20 @@ const projects = [
     github: 'https://github.com/maaz-khan8/CarBazaar',
   },
   {
+    title: 'Proxy Server',
+    image: 'https://miro.medium.com/v2/resize:fit:803/1*E4lFl0-xX1L5uZXIyBQdsQ.jpeg',
+    description: 'Developed a Python-based proxy server to manage client-server communication. Implemented request routing and support for multiple concurrent connections to improve performance.',
+    technologies: 'Python, Networking, Multi-threading',
+    github: 'https://github.com/maaz-khan8/Proxy_Server',
+  },
+  {
+    title: 'Todo List React',
+    image: 'https://www.shutterstock.com/image-vector/do-list-lettering-vector-pencil-600nw-1837137628.jpg',
+    description: 'Developed a dynamic todo list application using React with features like add, delete, edit, and mark tasks as complete. Implemented local storage for data persistence and responsive design.',
+    technologies: 'React, JavaScript, Local Storage',
+    github: 'https://github.com/maaz-khan8/Todolist_React',
+  },
+  {
     title: 'Amazon Clone',
     image: 'https://www.iccr.org/wp-content/uploads/2024/05/amazon-shutterstock_655556107-scaled.jpg',
     description: 'Built a responsive Amazon clone with modern UI/UX design using HTML and CSS. Implemented product listings, shopping cart functionality, and user interface components similar to the original Amazon platform.',
@@ -30,17 +44,17 @@ const projects = [
     github: 'https://github.com/maaz-khan8/Netflix_Clone',
   },
   {
-    title: 'Todo List React',
-    image: 'https://www.w3schools.com/whatis/img_react.jpg',
-    description: 'Developed a dynamic todo list application using React with features like add, delete, edit, and mark tasks as complete. Implemented local storage for data persistence and responsive design.',
-    technologies: 'React, JavaScript, Local Storage',
-    github: 'https://github.com/maaz-khan8/Todolist_React',
+    title: 'Cab Management System',
+    image: 'https://cacm.acm.org/wp-content/uploads/2025/01/012225.BLOG_.21st-Century-C-G.jpg',
+    description: 'Developed a simulation of a taxi dispatch system featuring user authentication, ride booking, and fare generation. Implemented Dijkstra\'s algorithm for efficient route planning using graph structures.',
+    technologies: 'C++, OOP, Data Structures, Algorithms',
+    github: 'https://github.com/maaz-khan8/Cab_Management_System',
   },
   {
     title: 'Hospital Management System',
     image: 'https://cacm.acm.org/wp-content/uploads/2025/01/012225.BLOG_.21st-Century-C-G.jpg',
     description: 'Developed a comprehensive hospital management system using C++ with features for patient registration, doctor management, appointment scheduling, and medical records tracking.',
-    technologies: 'C++, Data Structures, File Handling',
+    technologies: 'C++, OOP, Data Structures, File Handling',
     github: 'https://github.com/maaz-khan8/Hospital_management_system',
   },
   {
@@ -50,20 +64,8 @@ const projects = [
     technologies: 'C, Data Structures, File I/O',
     github: 'https://github.com/maaz-khan8/ScoreBoardProject',
   },
-  {
-    title: 'Cab Management System',
-    image: 'https://cacm.acm.org/wp-content/uploads/2025/01/012225.BLOG_.21st-Century-C-G.jpg',
-    description: 'Developed a simulation of a taxi dispatch system featuring user authentication, ride booking, and fare generation. Implemented Dijkstra\'s algorithm for efficient route planning using graph structures.',
-    technologies: 'C++, Data Structures, Algorithms',
-    github: 'https://github.com/maaz-khan8/Cab_Management_System',
-  },
-  {
-    title: 'Proxy Server',
-    image: 'https://miro.medium.com/v2/resize:fit:803/1*E4lFl0-xX1L5uZXIyBQdsQ.jpeg',
-    description: 'Developed a Python-based proxy server to manage client-server communication. Implemented request routing and support for multiple concurrent connections to improve performance.',
-    technologies: 'Python, Networking, Multi-threading',
-    github: 'https://github.com/maaz-khan8/Proxy_Server',
-  },
+
+
 ];
 
 const ProjectsSection: React.FC = () => {
