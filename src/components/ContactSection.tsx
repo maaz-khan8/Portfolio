@@ -112,7 +112,7 @@ const ContactSection: React.FC = () => {
 
             <div className="flex gap-4 text-2xl">
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/in/maaz-khan-5b9b12240/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="hover:text-blue-700 transform hover:scale-110 transition-all duration-200"

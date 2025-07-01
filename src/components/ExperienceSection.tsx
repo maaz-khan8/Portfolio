@@ -9,8 +9,8 @@ const experiences = [
   },
   {
     title: 'Co-Head of Fraction Ahead',
-    org: 'Rubik 5.0 - FAST NUCES',
-    duration: '2023',
+    org: 'Rubik 5.0 - Credo College',
+    duration: '2022',
     desc: 'Led the design and development of challenging math questions for the "Fraction Ahead" module in Rubik 5.0, a college-level competitive event.'
   },
 ];
