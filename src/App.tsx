@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { SunIcon, MoonIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 import HeroSection from './components/HeroSection';
@@ -16,9 +15,6 @@ const App: React.FC = () => {
   );
   const [navOpen, setNavOpen] = useState(false);
 
-  // Set basename for BrowserRouter: '/' for all environments
-  const basename = '/';
-
   useEffect(() => {
     document.documentElement.classList.toggle('dark', theme === 'dark');
     localStorage.setItem('theme', theme);
@@ -33,7 +29,7 @@ const App: React.FC = () => {
   const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark');
 
   return (
-    <Router basename={basename}>
+    <>
       <Helmet>
         <title>Maaz Khan - Developer Portfolio</title>
         <meta name="description" content="Maaz Khan - Final-year Computer Science student at FAST NUCES, passionate about Web Development, AI, and Data Science. View my projects and skills." />
@@ -41,7 +37,7 @@ const App: React.FC = () => {
       <div className="min-h-screen bg-gradient-to-br from-blue-200 via-white to-blue-300 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
         <nav className="flex justify-between items-center px-6 py-4 shadow-md bg-white/80 dark:bg-gray-900/80 backdrop-blur sticky top-0 z-50">
           <div className="font-bold text-xl tracking-tight">
-            <Link to="/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">Maaz Khan</Link>
+            <a href="#hero" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">Maaz Khan</a>
           </div>
           {/* Hamburger for mobile */}
           <div className="md:hidden">
@@ -116,22 +112,15 @@ const App: React.FC = () => {
           </div>
         </nav>
         <main>
-          <Routes>
-            <Route path="/" element={
-              <>
-                <HeroSection />
-                <AboutSection />
-                <ProjectsSection />
-                <SkillsSection />
-                <ExperienceSection />
-                <ContactSection />
-              </>
-            } />
-            <Route path="*" element={<div className="text-center py-20">404 - Page Not Found</div>} />
-          </Routes>
+          <HeroSection />
+          <AboutSection />
+          <ProjectsSection />
+          <SkillsSection />
+          <ExperienceSection />
+          <ContactSection />
         </main>
       </div>
-    </Router>
+    </>
   );
 };
 
