@@ -11,7 +11,7 @@ const projects = [
   },
   {
     title: 'Car Bazaar',
-    image: 'https://play-lh.googleusercontent.com/R9MI1tHjJSKBc1C2Z5fgGdIRYZuKpGwtdmst_sh72y1cyMiHAkI5di5BOjToPAHWUcaI',
+    image: 'pic3.png',
     description: 'Developed a responsive frontend (React, Tailwind CSS) and efficient backend (Node.js, Express, PostgreSQL) for vehicle trading and comparison. Engineered user authentication, admin panel, and automated email notifications.',
     technologies: 'React, Node.js, Express, PostgreSQL, Tailwind CSS',
     github: 'https://github.com/maaz-khan8/CarBazaar',
@@ -84,7 +84,10 @@ const ProjectsSection: React.FC = () => {
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-110 border-b-4 border-blue-100 dark:border-blue-900 bg-gray-100 dark:bg-gray-800" 
+                  className="h-48 w-full object-cover object-center transition-transform duration-300 group-hover:scale-110 border-b-4 border-blue-100 dark:border-blue-900 bg-gray-100 dark:bg-gray-800" 
+                  onError={(e) => {
+                    e.currentTarget.src = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop&crop=center';
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>

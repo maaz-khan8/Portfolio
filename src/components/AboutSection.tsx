@@ -12,7 +12,7 @@ const AboutSection: React.FC = () => {
         </div>
         <div className="flex-1">
           <h2 className="text-3xl font-bold mb-4 text-blue-700 dark:text-blue-400">About Me</h2>
-          <p className="mb-2">I'm a motivated final-year Computer Science student at FAST NUCES, Karachi, currently working as a Data & AI Intern at Bank Islami Pakistan Ltd. I'm skilled in data analytics, dashboard development, and machine learning.</p>
+          <p className="mb-2">I am a motivated final-year Computer Science student at FAST NUCES, Karachi, with hands-on experience in Data Science, Quality Assurance, and Full-Stack Development. I have industry exposure as a Data & AI Intern at Bank Islami Pakistan Ltd., where I worked on data analytics, interactive dashboard development with QlikView</p>
           <p className="mb-2">Passionate about Data Science, AI, and Analytics, I specialize in designing interactive dashboards using QlikView and conducting data cleaning and transformation for large datasets. I thrive in environments that value data-driven insights and continuous learning.</p>
           <p className="mb-4">I enjoy working with data visualization tools, machine learning algorithms, and have experience in both technical implementation and business intelligence solutions.</p>
           <div className="flex flex-wrap gap-4 items-center mb-4">

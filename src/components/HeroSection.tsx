@@ -39,7 +39,7 @@ const HeroSection: React.FC = () => {
           Hi, I'm Maaz Khan
         </motion.h1>
         <motion.h2 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15, duration: 0.7 }} className="text-xl md:text-3xl font-semibold text-blue-700 dark:text-blue-400 mb-4">
-          Data & AI Intern | Transforming data into insights
+        I transform ideas into interactive interfaces
         </motion.h2>
         <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.7 }} className="text-md text-gray-600 dark:text-gray-400 mb-4">
           Based in Karachi, Pakistan | FAST-NUCES
