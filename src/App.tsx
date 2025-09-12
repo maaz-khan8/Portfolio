@@ -16,8 +16,8 @@ const App: React.FC = () => {
   );
   const [navOpen, setNavOpen] = useState(false);
 
-  // Set basename for BrowserRouter: '/Portfolio' in production, '/' in development
-  const basename = process.env.NODE_ENV === 'production' ? '/Portfolio' : '/';
+  // Set basename for BrowserRouter: '/' for all environments
+  const basename = '/';
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', theme === 'dark');
