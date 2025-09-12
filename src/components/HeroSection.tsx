@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const HeroSection: React.FC = () => {
-  const [showResumeInfo, setShowResumeInfo] = useState(false);
 
   // Use PUBLIC_URL for correct path in all environments
   const resumeUrl = `${process.env.PUBLIC_URL}/resume.pdf`;
@@ -22,11 +21,6 @@ const HeroSection: React.FC = () => {
     window.open(resumeUrl, '_blank');
   };
 
-  const handleResumeRequest = () => {
-    setShowResumeInfo(true);
-    // Auto-hide after 5 seconds
-    setTimeout(() => setShowResumeInfo(false), 5000);
-  };
 
   return (
     <section
@@ -45,7 +39,7 @@ const HeroSection: React.FC = () => {
           Hi, I'm Maaz Khan
         </motion.h1>
         <motion.h2 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15, duration: 0.7 }} className="text-xl md:text-3xl font-semibold text-blue-700 dark:text-blue-400 mb-4">
-          I transform ideas into interactive interfaces
+          Data & AI Intern | Transforming data into insights
         </motion.h2>
         <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.7 }} className="text-md text-gray-600 dark:text-gray-400 mb-4">
           Based in Karachi, Pakistan | FAST-NUCES
@@ -70,21 +64,6 @@ const HeroSection: React.FC = () => {
             Download as PDF
           </button>
         </div>
-        {/* Resume Info Popup */}
-        {showResumeInfo && (
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }} 
-            animate={{ opacity: 1, y: 0 }} 
-            className="mt-4 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg"
-          >
-            <p className="text-green-800 dark:text-green-200 text-sm">
-              <strong>To request a PDF resume:</strong><br/>
-              Please use the contact form below or email me directly at:<br/>
-              <span className="font-mono">maaz.khan20307@gmail.com</span><br/>
-              Subject: "Resume Request"
-            </p>
-          </motion.div>
-        )}
       </div>
     </section>
   );

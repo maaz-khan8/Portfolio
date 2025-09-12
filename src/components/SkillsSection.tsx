@@ -1,31 +1,47 @@
 import React from 'react';
-import { FaJs, FaPython, FaReact, FaGitAlt, FaDatabase, FaLinux } from 'react-icons/fa';
-import { SiCplusplus, SiC, SiDotnet, SiTailwindcss, SiSelenium } from 'react-icons/si';
+import { FaJs, FaPython, FaReact, FaGitAlt, FaDatabase, FaLinux, FaChartLine, FaNodeJs, FaFileExcel, FaCode } from 'react-icons/fa';
+import { SiCplusplus, SiC, SiDotnet, SiTailwindcss, SiSelenium, SiPandas, SiNumpy, SiScikitlearn, SiExpress, SiMysql } from 'react-icons/si';
 
 const skills = [
   // Programming Languages
-  { name: 'C', icon: React.createElement(SiC as React.ComponentType<any>, { className: "text-blue-600" }), level: 95, category: 'Languages' },
-  { name: 'C++', icon: React.createElement(SiCplusplus as React.ComponentType<any>, { className: "text-blue-700" }), level: 90, category: 'Languages' },
-  { name: 'Python', icon: React.createElement(FaPython as React.ComponentType<any>, { className: "text-blue-400" }), level: 85, category: 'Languages' },
-  { name: 'JavaScript', icon: React.createElement(FaJs as React.ComponentType<any>, { className: "text-yellow-400" }), level: 75, category: 'Languages' },
+  { name: 'C', icon: React.createElement(SiC as React.ComponentType<any>, { className: "text-blue-600" }), level: 95, category: 'Programming Languages' },
+  { name: 'C++', icon: React.createElement(SiCplusplus as React.ComponentType<any>, { className: "text-blue-700" }), level: 90, category: 'Programming Languages' },
+  { name: 'Python', icon: React.createElement(FaPython as React.ComponentType<any>, { className: "text-blue-400" }), level: 90, category: 'Programming Languages' },
+  { name: 'JavaScript', icon: React.createElement(FaJs as React.ComponentType<any>, { className: "text-yellow-400" }), level: 75, category: 'Programming Languages' },
   
-  // Frameworks
-  { name: 'React', icon: React.createElement(FaReact as React.ComponentType<any>, { className: "text-blue-500" }), level: 75, category: 'Frameworks' },
-  { name: '.NET MVC', icon: React.createElement(SiDotnet as React.ComponentType<any>, { className: "text-purple-600" }), level: 75, category: 'Frameworks' },
-  { name: '.NET Webform', icon: React.createElement(SiDotnet as React.ComponentType<any>, { className: "text-purple-700" }), level: 75, category: 'Frameworks' },
-  { name: 'Tailwind CSS', icon: React.createElement(SiTailwindcss as React.ComponentType<any>, { className: "text-cyan-500" }), level: 88, category: 'Frameworks' },
+  // Data Science Tools
+  { name: 'Pandas', icon: React.createElement(SiPandas as React.ComponentType<any>, { className: "text-purple-600" }), level: 85, category: 'Data Science Tools' },
+  { name: 'NumPy', icon: React.createElement(SiNumpy as React.ComponentType<any>, { className: "text-blue-500" }), level: 80, category: 'Data Science Tools' },
+  { name: 'Scikit-learn', icon: React.createElement(SiScikitlearn as React.ComponentType<any>, { className: "text-orange-500" }), level: 75, category: 'Data Science Tools' },
+  { name: 'Matplotlib', icon: React.createElement(FaChartLine as React.ComponentType<any>, { className: "text-green-600" }), level: 80, category: 'Data Science Tools' },
+  { name: 'Power BI', icon: React.createElement(FaDatabase as React.ComponentType<any>, { className: "text-yellow-500" }), level: 70, category: 'Data Science Tools' },
+  { name: 'QlikView', icon: React.createElement(FaChartLine as React.ComponentType<any>, { className: "text-green-600" }), level: 80, category: 'Data Science Tools' },
   
   // Databases
   { name: 'SQL Server', icon: React.createElement(FaDatabase as React.ComponentType<any>, { className: "text-red-600" }), level: 87, category: 'Databases' },
+  { name: 'MySQL', icon: React.createElement(SiMysql as React.ComponentType<any>, { className: "text-orange-500" }), level: 80, category: 'Databases' },
   
-  // Tools
-  { name: 'Git', icon: React.createElement(FaGitAlt as React.ComponentType<any>, { className: "text-orange-500" }), level: 90, category: 'Tools' },
-  { name: 'Linux', icon: React.createElement(FaLinux as React.ComponentType<any>, { className: "text-yellow-600" }), level: 75, category: 'Tools' },
-  { name: 'Power BI', icon: React.createElement(FaDatabase as React.ComponentType<any>, { className: "text-yellow-500" }), level: 70, category: 'Tools' },
-  { name: 'Selenium', icon: React.createElement(SiSelenium as React.ComponentType<any>, { className: "text-green-600" }), level: 80, category: 'Tools' },
+  // Frameworks & Web
+  { name: 'React.js', icon: React.createElement(FaReact as React.ComponentType<any>, { className: "text-blue-500" }), level: 75, category: 'Frameworks & Web' },
+  { name: 'Node.js', icon: React.createElement(FaNodeJs as React.ComponentType<any>, { className: "text-green-600" }), level: 70, category: 'Frameworks & Web' },
+  { name: 'Express.js', icon: React.createElement(SiExpress as React.ComponentType<any>, { className: "text-gray-600" }), level: 70, category: 'Frameworks & Web' },
+  { name: 'ASP.NET MVC', icon: React.createElement(SiDotnet as React.ComponentType<any>, { className: "text-purple-600" }), level: 75, category: 'Frameworks & Web' },
+  { name: 'ASP.NET Web Forms', icon: React.createElement(SiDotnet as React.ComponentType<any>, { className: "text-purple-700" }), level: 75, category: 'Frameworks & Web' },
+  { name: 'Tailwind CSS', icon: React.createElement(SiTailwindcss as React.ComponentType<any>, { className: "text-cyan-500" }), level: 88, category: 'Frameworks & Web' },
+  
+  // Testing & QA Tools
+  { name: 'Selenium', icon: React.createElement(SiSelenium as React.ComponentType<any>, { className: "text-green-600" }), level: 80, category: 'Testing & QA Tools' },
+  { name: 'Manual Testing', icon: React.createElement(FaDatabase as React.ComponentType<any>, { className: "text-blue-500" }), level: 85, category: 'Testing & QA Tools' },
+  { name: 'Test Case Design', icon: React.createElement(FaDatabase as React.ComponentType<any>, { className: "text-purple-500" }), level: 80, category: 'Testing & QA Tools' },
+  
+  // Version Control & Tools
+  { name: 'Git/GitHub', icon: React.createElement(FaGitAlt as React.ComponentType<any>, { className: "text-orange-500" }), level: 90, category: 'Version Control & Tools' },
+  { name: 'Linux', icon: React.createElement(FaLinux as React.ComponentType<any>, { className: "text-yellow-600" }), level: 75, category: 'Version Control & Tools' },
+  { name: 'Visual Studio Code', icon: React.createElement(FaCode as React.ComponentType<any>, { className: "text-blue-500" }), level: 85, category: 'Version Control & Tools' },
+  { name: 'MS Excel', icon: React.createElement(FaFileExcel as React.ComponentType<any>, { className: "text-green-600" }), level: 80, category: 'Version Control & Tools' },
 ];
 
-const categories = ['Languages', 'Frameworks', 'Databases', 'Tools'];
+const categories = ['Programming Languages', 'Data Science Tools', 'Databases', 'Frameworks & Web', 'Testing & QA Tools', 'Version Control & Tools'];
 
 const getLevelText = (level: number) => {
   if (level >= 90) return 'Expert';

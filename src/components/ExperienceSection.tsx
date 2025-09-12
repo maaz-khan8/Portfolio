@@ -2,6 +2,12 @@ import React from 'react';
 
 const experiences = [
   {
+    title: 'Data & AI Intern',
+    org: 'Bank Islami Pakistan Ltd. – Karachi, Pakistan',
+    duration: 'July 2025 – August 2025',
+    desc: 'Designed and developed interactive dashboards in QlikView, improving internal reporting efficiency. Conducted data cleaning and transformation for large datasets, ensuring accuracy in analytics.'
+  },
+  {
     title: 'Private Tutor',
     org: 'Self-Employed',
     duration: '2022 - Present',
@@ -15,12 +21,27 @@ const experiences = [
   },
 ];
 
+const certifications = [
+  {
+    title: 'Supervised Machine Learning: Regression and Classification',
+    org: 'Coursera',
+    duration: 'Completed',
+    desc: 'Comprehensive course covering machine learning algorithms, regression techniques, and classification methods for data analysis and predictive modeling.'
+  },
+  {
+    title: 'What is Data Science?',
+    org: 'Coursera',
+    duration: 'Completed',
+    desc: 'Foundational course exploring data science concepts, methodologies, and tools used in modern data analysis and business intelligence.'
+  },
+];
+
 const education = [
   {
     title: 'Bachelor of Science in Computer Science',
     org: 'FAST-NUCES, Karachi',
     duration: 'Expected Graduation: June 2026',
-    desc: 'CGPA: 3.25 | Focused on software engineering, web development, and computer science fundamentals.'
+    desc: 'CGPA: 3.25 | Focused on software engineering, data science, and computer science fundamentals.'
   },
   {
     title: 'A-levels',
@@ -40,7 +61,7 @@ const ExperienceSection: React.FC = () => {
   return (
     <section id="experience" className="py-16 px-4 sm:px-6 bg-gray-50 dark:bg-gray-800">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold mb-10 text-blue-700 dark:text-blue-400">Experience & Education</h2>
+        <h2 className="text-3xl font-bold mb-10 text-blue-700 dark:text-blue-400">Experience, Education & Certifications</h2>
         
         <div className="mb-12">
           <h3 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-200">Experience</h3>
@@ -50,6 +71,21 @@ const ExperienceSection: React.FC = () => {
                 <div className="absolute -left-5 top-1 w-3 h-3 bg-blue-600 dark:bg-blue-400 rounded-full border-2 border-white dark:border-gray-900"></div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{item.title}</h3>
                 <div className="text-blue-700 dark:text-blue-400 font-medium">{item.org}</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400 mb-2">{item.duration}</div>
+                <p className="text-gray-700 dark:text-gray-300">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mb-12">
+          <h3 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-200">Certifications</h3>
+          <div className="border-l-4 border-purple-200 dark:border-purple-700 pl-8">
+            {certifications.map((item, idx) => (
+              <div key={idx} className="mb-10 relative">
+                <div className="absolute -left-5 top-1 w-3 h-3 bg-purple-600 dark:bg-purple-400 rounded-full border-2 border-white dark:border-gray-900"></div>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{item.title}</h3>
+                <div className="text-purple-700 dark:text-purple-400 font-medium">{item.org}</div>
                 <div className="text-sm text-gray-500 dark:text-gray-400 mb-2">{item.duration}</div>
                 <p className="text-gray-700 dark:text-gray-300">{item.desc}</p>
               </div>
