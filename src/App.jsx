@@ -9,8 +9,8 @@ import ExperienceSection from './components/ExperienceSection';
 import ContactSection from './components/ContactSection';
 import './App.css';
 
-const App: React.FC = () => {
-  const [theme, setTheme] = useState<'light' | 'dark'>(
+const App = () => {
+  const [theme, setTheme] = useState(
     localStorage.getItem('theme') === 'dark' ? 'dark' : 'light'
   );
   const [navOpen, setNavOpen] = useState(false);
@@ -125,3 +125,4 @@ const App: React.FC = () => {
 };
 
 export default App;
+

@@ -57,7 +57,7 @@ const education = [
   },
 ];
 
-const ExperienceSection: React.FC = () => {
+const ExperienceSection = () => {
   return (
     <section id="experience" className="py-16 px-4 sm:px-6 bg-gray-50 dark:bg-gray-800">
       <div className="max-w-4xl mx-auto">
@@ -112,4 +112,5 @@ const ExperienceSection: React.FC = () => {
   );
 };
 
-export default ExperienceSection; 
+export default ExperienceSection;
+

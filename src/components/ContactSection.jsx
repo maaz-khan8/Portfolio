@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
-const ContactSection: React.FC = () => {
+const ContactSection = () => {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError('');
@@ -117,7 +117,7 @@ const ContactSection: React.FC = () => {
                 rel="noopener noreferrer" 
                 className="hover:text-blue-700 transform hover:scale-110 transition-all duration-200"
               >
-                {React.createElement(FaLinkedin as React.ComponentType<any>)}
+                {React.createElement(FaLinkedin)}
               </a>
               <a 
                 href="https://github.com/maaz-khan8" 
@@ -125,7 +125,7 @@ const ContactSection: React.FC = () => {
                 rel="noopener noreferrer" 
                 className="hover:text-gray-900 dark:hover:text-white transform hover:scale-110 transition-all duration-200"
               >
-                {React.createElement(FaGithub as React.ComponentType<any>)}
+                {React.createElement(FaGithub)}
               </a>
             </div>
           </div>
@@ -135,4 +135,5 @@ const ContactSection: React.FC = () => {
   );
 };
 
-export default ContactSection; 
+export default ContactSection;
+
