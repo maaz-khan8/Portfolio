@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const HeroSection: React.FC = () => {
+const HeroSection = () => {
 
   // Use PUBLIC_URL for correct path in all environments
   const resumeUrl = `${process.env.PUBLIC_URL}/resume.pdf`;
@@ -69,4 +69,5 @@ const HeroSection: React.FC = () => {
   );
 };
 
-export default HeroSection; 
+export default HeroSection;
+
