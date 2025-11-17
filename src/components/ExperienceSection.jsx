@@ -2,6 +2,12 @@ import React from 'react';
 
 const experiences = [
   {
+    title: 'Data Science Intern',
+    org: '10pearls – Karachi, Pakistan',
+    duration: 'September 2025 – November 2025',
+    desc: 'Developed an end-to-end ML system for multi-horizon air quality forecasting using ensemble models (Random Forest, Ridge Regression) deployed via Hopsworks Feature Store. Engineered 124 features from time-series data, implemented EPA-compliant AQI calculation, and created a production-ready Streamlit dashboard with real-time forecasts, automated alerting, SHAP interpretability analysis, and automated retraining via GitHub Actions.'
+  },
+  {
     title: 'Data & AI Intern',
     org: 'Bank Islami Pakistan Ltd. – Karachi, Pakistan',
     duration: 'July 2025 – August 2025',

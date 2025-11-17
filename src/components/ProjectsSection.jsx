@@ -1,7 +1,21 @@
 import React from 'react';
 
 const projects = [
+  {
+    title: 'Air Quality Index Forecasting System',
+    image: '/AQI.png',
+    description: 'Developed an end-to-end ML system for multi-horizon air quality forecasting (1h–72h ahead) using ensemble models (Random Forest, Ridge Regression), and deploying via Hopsworks Feature Store with automated retraining via GitHub Actions. Engineered 124 features from time-series data including temporal patterns, lag features, rolling statistics, and domain-specific interactions, implementing EPA-compliant AQI calculation. Created a production-ready Streamlit dashboard with real-time forecasts, automated alerting system, SHAP interpretability analysis, and EDA snapshots.',
+    technologies: 'Python, Machine Learning, Hopsworks, Streamlit, GitHub Actions, SHAP',
+    github: 'https://github.com/maaz-khan8/AirQualityIndex',
+  },
   
+  {
+    title: 'T20 Cricket ML Predictor',
+    image: '/T20.webp',
+    description: 'Built an end-to-end ML pipeline using XGBoost and Scikit-learn to predict T20 cricket match outcomes with 71.5% accuracy (AUC: 0.77) and MAE of 21.9 runs on 2016–2024 World Cup data. Performed feature optimization, reducing predictors from 15 to 10–11 key variables via importance analysis and GroupShuffleSplit cross-validation to prevent data leakage. Deployed an interactive Streamlit dashboard for real-time win probability and score predictions.',
+    technologies: 'Python, XGBoost, Scikit-learn, Streamlit, Machine Learning',
+    github: 'https://github.com/maaz-khan8/T20-Cricket-ML-Predictor',
+  },
   {
     title: 'Employee Management System',
     image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAh1BMVEVRK9T///9EEtLMxfBKHtOai+M/ANFCDdLk4PfSy/LZ0/RPKNRYM9bx7/tHGdLJwvCgkeWyp+mVhOLt6vpMI9Pf2vZ+aN2qnOiOfOCrn+iHc9/n4/jBt+7b1fWKd+B1XdtkRti6r+z5+P1yWNtePdeTguJ6YtxnS9htUtr29P23q+upneeDbt7xWqHzAAADn0lEQVR4nO3a7VraMBiA4bSUFKgUxagoooKfOM//+KaMvgk0NFxOXM2e+yeWJc+sTWlQCgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4H+SpSJrOMxUB5Xuq2XaaOONQaV/5L8OvOx31vrj3WOYq+qwE+egct5p0n9PNJN+4zGO18Mkpv3EOip2HZYdV8fMcvtqPk0a6ff/hMvmQxy9fNfoX1c40OHCgVvYCxde7F149g2Fyc2uP8VoChfpjvM0msLkesco8RQm9yb2wlP/xebzhe26ln648K5KocLhyKOzWg87W6/a39nW0SffsB6ueBfFUGFf73lPk2cy0HjrPQe6p6kXznznaahwsO8ZVhzJQN2mu8SvUy9MJp6RoyiU2S6y+nkaReFYhvYsilEU3tjztb4oRlHYtWMPaxebKAovtF2cL9Otw6IovCz1UEZ/2LrYRFJobmX0s63zNIrC95um/FqGf9y8w4ilsEgXMv7mohhLocpuZPzRxnkaTaHSA5nAk7soxlNY7FgU4ylUpaQkJ86iGP70VOd9WvDvC5W2z0Dv7MUmVLg4rRle+RJbUGieZQrOoviZpxi+T2FtKFTpq8zBPuaPqlDl9ubNVOdpXIXmSSbRqc7TuAqVts/DztdXi8gKCyOzWK57IitU2aNM4/XPoviZwscWFyo9k3ncrc7TUGFv3N12/Ox78NqWQmcevdXFJnxPk9V4t7HaUuhuqHQ/Xo/ovrTi3LypIspC8yIz6esoC1U+l6mcZ1EWKr2sfvK+KGbdCAuzN5nLPI+yUOmOTOa5HMdYWBQymapexFio7C8u6T5FWaj0mUznJc7C4kGmM4qzUKX174q0vrAwZuOOuLlQ6dMfVljkxfnbg/skM1Bo7n9WoTla9UxvbUyg0N2Oair0fXryfoA6bKGRC8dEakKFRWm3oxoKe5OxR3d7o/XQhc5jQnmcHSpU2dU+hTuc1x57H7Qwm9ihR9WeRLBQ6c3vFLW5sHT+pGRjKVxYqB9TmNrHoMli/0JVdt1Jt7mwPLFDy3c59yhU2g1pc2FWZ4c+rv71fQqN88ZWFzq7SlPZN9unUKXOb3/W5kKl5+tZ2qU4HS2HK8tfDQPq6XBt2XF2htPBcthk8eQpXFQ/HB/iri1/uZ6djd60sxCn1aZ043i57F1vfB8s9WxuBza6C/nhYW68TZnnqf/r+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/Ei/AfHYTPUXy/PDAAAAAElFTkSuQmCC',
@@ -46,14 +60,14 @@ const projects = [
   },
   {
     title: 'Cab Management System',
-    image: 'https://cacm.acm.org/wp-content/uploads/2025/01/012225.BLOG_.21st-Century-C-G.jpg',
+    image: '/CBS.png',
     description: 'Developed a simulation of a taxi dispatch system featuring user authentication, ride booking, and fare generation. Implemented Dijkstra\'s algorithm for efficient route planning using graph structures.',
     technologies: 'C++, OOP, Data Structures, Algorithms',
     github: 'https://github.com/maaz-khan8/Cab_Management_System',
   },
   {
     title: 'Hospital Management System',
-    image: 'https://cacm.acm.org/wp-content/uploads/2025/01/012225.BLOG_.21st-Century-C-G.jpg',
+    image: '/HMS.png',
     description: 'Developed a comprehensive hospital management system using C++ with features for patient registration, doctor management, appointment scheduling, and medical records tracking.',
     technologies: 'C++, OOP, Data Structures, File Handling',
     github: 'https://github.com/maaz-khan8/Hospital_management_system',
