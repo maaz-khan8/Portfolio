@@ -1,0 +1,161 @@
+/* ─── Shell ──────────────────────────────────────────────── */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--nav-height);
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition:
+    background  var(--transition-slow),
+    border-color var(--transition-slow),
+    backdrop-filter var(--transition-slow);
+}
+
+.scrolled {
+  background: rgba(10, 10, 15, 0.82);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom-color: var(--border-subtle);
+}
+
+[data-theme='light'] .scrolled {
+  background: rgba(248, 249, 255, 0.88);
+}
+
+/* ─── Inner row ─────────────────────────────────────────── */
+.inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* ─── Logo ───────────────────────────────────────────────── */
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  white-space: nowrap;
+  transition: color var(--transition);
+  flex-shrink: 0;
+}
+
+.logo:hover { color: var(--accent-light); }
+
+.logoDot { color: var(--accent); }
+
+/* ─── Desktop nav ────────────────────────────────────────── */
+.desktopNav {
+  display: none;
+  align-items: center;
+  gap: 2px;
+  flex: 1;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .desktopNav { display: flex; }
+}
+
+.navLink {
+  position: relative;
+  padding: 7px 14px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  border-radius: var(--radius-xs);
+  transition: color var(--transition);
+}
+
+.navLink:hover { color: var(--text-primary); }
+
+.navLinkActive { color: var(--accent-light) !important; }
+
+.underline {
+  position: absolute;
+  inset-x: 10px;
+  bottom: 0;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+/* ─── Controls (right side) ──────────────────────────────── */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.iconBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  transition: background var(--transition), border-color var(--transition), transform var(--transition);
+}
+
+.iconBtn:hover {
+  background: var(--card-hover);
+  border-color: var(--border);
+  transform: scale(1.08);
+}
+
+/* hide hamburger on desktop */
+@media (min-width: 768px) {
+  .controls .iconBtn:last-child { display: none; }
+}
+
+/* ─── Mobile drawer ──────────────────────────────────────── */
+.drawer {
+  overflow: hidden;
+  background: var(--surface);
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  padding: 6px 12px 14px;
+}
+
+@media (min-width: 768px) {
+  .drawer { display: none !important; }
+}
+
+.drawerLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  border-radius: var(--radius-sm);
+  border-bottom: 1px solid var(--border-subtle);
+  text-align: left;
+  transition: color var(--transition), background var(--transition);
+}
+
+.drawerLink:last-child { border-bottom: none; }
+
+.drawerLink:hover,
+.drawerLinkActive {
+  color: var(--accent-light);
+  background: var(--accent-dim);
+}
+
+.drawerIndex {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+  width: 22px;
+  flex-shrink: 0;
+}

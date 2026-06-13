@@ -1,118 +1,146 @@
 import React from 'react';
-import { FaJs, FaPython, FaReact, FaGitAlt, FaDatabase, FaLinux, FaChartLine, FaNodeJs, FaFileExcel, FaCode, FaRobot, FaBrain } from 'react-icons/fa';
-import { SiCplusplus, SiC, SiDotnet, SiTailwindcss, SiSelenium, SiPandas, SiNumpy, SiScikitlearn, SiExpress, SiMysql, SiNestjs, SiNextdotjs, SiPrisma, SiSocketdotio, SiJira, SiPostman, SiPostgresql } from 'react-icons/si';
+import { motion } from 'framer-motion';
+import {
+  FaJs, FaPython, FaReact, FaGitAlt, FaDatabase,
+  FaLinux, FaChartLine, FaNodeJs, FaFileExcel, FaCode,
+  FaRobot, FaBrain,
+} from 'react-icons/fa';
+import {
+  SiCplusplus, SiC, SiDotnet, SiTailwindcss, SiSelenium,
+  SiPandas, SiNumpy, SiScikitlearn, SiMysql, SiNestjs,
+  SiNextdotjs, SiPrisma, SiSocketdotio, SiJira, SiPostman,
+  SiPostgresql,
+} from 'react-icons/si';
+import styles from './SkillsSection.module.css';
 
-const skills = [
-  // Programming Languages
-  { name: 'C', icon: React.createElement(SiC, { className: "text-blue-600" }), level: 95, category: 'Programming Languages' },
-  { name: 'C++', icon: React.createElement(SiCplusplus, { className: "text-blue-700" }), level: 90, category: 'Programming Languages' },
-  { name: 'Python', icon: React.createElement(FaPython, { className: "text-blue-400" }), level: 70, category: 'Programming Languages' },
-  { name: 'JavaScript', icon: React.createElement(FaJs, { className: "text-yellow-400" }), level: 75, category: 'Programming Languages' },
-
-  // Data Science Tools
-  { name: 'Pandas', icon: React.createElement(SiPandas, { className: "text-purple-600" }), level: 85, category: 'Data Science Tools' },
-  { name: 'NumPy', icon: React.createElement(SiNumpy, { className: "text-blue-500" }), level: 80, category: 'Data Science Tools' },
-  { name: 'Scikit-learn', icon: React.createElement(SiScikitlearn, { className: "text-orange-500" }), level: 75, category: 'Data Science Tools' },
-  { name: 'Matplotlib', icon: React.createElement(FaChartLine, { className: "text-green-600" }), level: 80, category: 'Data Science Tools' },
-  { name: 'QlikView', icon: React.createElement(FaChartLine, { className: "text-green-700" }), level: 80, category: 'Data Science Tools' },
-
-  // Agentic AI Tools
-  { name: 'CrewAI', icon: React.createElement(FaRobot, { className: "text-purple-500" }), level: 70, category: 'Agentic AI Tools' },
-  { name: 'Gemini AI', icon: React.createElement(FaBrain, { className: "text-blue-500" }), level: 70, category: 'Agentic AI Tools' },
-  { name: 'Pinecone', icon: React.createElement(FaDatabase, { className: "text-green-500" }), level: 70, category: 'Agentic AI Tools' },
-
-  // Databases
-  { name: 'SQL Server', icon: React.createElement(FaDatabase, { className: "text-red-600" }), level: 87, category: 'Databases' },
-  { name: 'MySQL', icon: React.createElement(SiMysql, { className: "text-orange-500" }), level: 80, category: 'Databases' },
-  { name: 'PostgreSQL', icon: React.createElement(SiPostgresql, { className: "text-blue-700" }), level: 80, category: 'Databases' },
-
-  // Frameworks & Web
-  { name: 'React.js', icon: React.createElement(FaReact, { className: "text-blue-500" }), level: 75, category: 'Frameworks & Web' },
-  { name: 'NestJS', icon: React.createElement(SiNestjs, { className: "text-red-600" }), level: 70, category: 'Frameworks & Web' },
-  { name: 'Next.js', icon: React.createElement(SiNextdotjs, { className: "text-gray-800 dark:text-gray-200" }), level: 70, category: 'Frameworks & Web' },
-  { name: 'Node.js', icon: React.createElement(FaNodeJs, { className: "text-green-600" }), level: 70, category: 'Frameworks & Web' },
-  { name: 'ASP.NET', icon: React.createElement(SiDotnet, { className: "text-purple-700" }), level: 75, category: 'Frameworks & Web' },
-  { name: 'Prisma ORM', icon: React.createElement(SiPrisma, { className: "text-teal-600" }), level: 70, category: 'Frameworks & Web' },
-  { name: 'Socket.IO', icon: React.createElement(SiSocketdotio, { className: "text-gray-700 dark:text-gray-300" }), level: 70, category: 'Frameworks & Web' },
-  { name: 'Tailwind CSS', icon: React.createElement(SiTailwindcss, { className: "text-cyan-500" }), level: 75, category: 'Frameworks & Web' },
-
-  // Testing & QA Tools
-  { name: 'Manual Testing', icon: React.createElement(FaDatabase, { className: "text-blue-500" }), level: 85, category: 'Testing & QA Tools' },
-  { name: 'Selenium', icon: React.createElement(SiSelenium, { className: "text-green-600" }), level: 60, category: 'Testing & QA Tools' },
-  { name: 'Playwright', icon: React.createElement(FaCode, { className: "text-teal-500" }), level: 60, category: 'Testing & QA Tools' },
-  { name: 'Test Case Design', icon: React.createElement(FaDatabase, { className: "text-purple-500" }), level: 80, category: 'Testing & QA Tools' },
-  { name: 'Jira', icon: React.createElement(SiJira, { className: "text-blue-600" }), level: 75, category: 'Testing & QA Tools' },
-  { name: 'Postman', icon: React.createElement(SiPostman, { className: "text-orange-500" }), level: 75, category: 'Testing & QA Tools' },
-
-  // Version Control & Tools
-  { name: 'Git/GitHub', icon: React.createElement(FaGitAlt, { className: "text-orange-500" }), level: 90, category: 'Version Control & Tools' },
-  { name: 'Linux', icon: React.createElement(FaLinux, { className: "text-yellow-600" }), level: 75, category: 'Version Control & Tools' },
-  { name: 'Visual Studio Code', icon: React.createElement(FaCode, { className: "text-blue-500" }), level: 85, category: 'Version Control & Tools' },
-  { name: 'MS Excel', icon: React.createElement(FaFileExcel, { className: "text-green-600" }), level: 80, category: 'Version Control & Tools' },
+const CATEGORIES = [
+  {
+    id: 'lang',
+    label: '01. Languages',
+    skills: [
+      { name: 'C',          Icon: SiC,          color: '#3b82f6' },
+      { name: 'C++',        Icon: SiCplusplus,  color: '#60a5fa' },
+      { name: 'Python',     Icon: FaPython,     color: '#facc15' },
+      { name: 'JavaScript', Icon: FaJs,         color: '#fbbf24' },
+      { name: 'SQL',        Icon: FaDatabase,   color: '#a78bfa' },
+    ],
+  },
+  {
+    id: 'ds',
+    label: '02. Data Science',
+    skills: [
+      { name: 'Pandas',      Icon: SiPandas,      color: '#a855f7' },
+      { name: 'NumPy',       Icon: SiNumpy,       color: '#60a5fa' },
+      { name: 'Scikit-learn',Icon: SiScikitlearn, color: '#f97316' },
+      { name: 'Matplotlib',  Icon: FaChartLine,   color: '#4ade80' },
+      { name: 'QlikView',    Icon: FaChartLine,   color: '#22d3ee' },
+      { name: 'Streamlit',   Icon: FaCode,        color: '#f87171' },
+      { name: 'SHAP',        Icon: FaChartLine,   color: '#fb923c' },
+      { name: 'Hopsworks',   Icon: FaDatabase,    color: '#c084fc' },
+    ],
+  },
+  {
+    id: 'ai',
+    label: '03. Agentic AI',
+    skills: [
+      { name: 'CrewAI',    Icon: FaRobot,    color: '#a855f7' },
+      { name: 'Gemini AI', Icon: FaBrain,    color: '#60a5fa' },
+      { name: 'Pinecone',  Icon: FaDatabase, color: '#4ade80' },
+      { name: 'RAG',       Icon: FaCode,     color: '#22d3ee' },
+    ],
+  },
+  {
+    id: 'db',
+    label: '04. Databases',
+    skills: [
+      { name: 'PostgreSQL', Icon: SiPostgresql, color: '#60a5fa' },
+      { name: 'SQL Server', Icon: FaDatabase,   color: '#f87171' },
+      { name: 'MySQL',      Icon: SiMysql,      color: '#f97316' },
+    ],
+  },
+  {
+    id: 'web',
+    label: '05. Frameworks & Web',
+    skills: [
+      { name: 'React.js',   Icon: FaReact,       color: '#61dafb' },
+      { name: 'NestJS',     Icon: SiNestjs,      color: '#e0234e' },
+      { name: 'Next.js',    Icon: SiNextdotjs,   color: 'var(--text-primary)' },
+      { name: 'Node.js',    Icon: FaNodeJs,      color: '#4ade80' },
+      { name: 'ASP.NET',    Icon: SiDotnet,      color: '#a855f7' },
+      { name: 'Prisma ORM', Icon: SiPrisma,      color: '#0ea5e9' },
+      { name: 'Socket.IO',  Icon: SiSocketdotio, color: '#94a3b8' },
+      { name: 'Tailwind',   Icon: SiTailwindcss, color: '#22d3ee' },
+    ],
+  },
+  {
+    id: 'qa',
+    label: '06. Testing & QA',
+    skills: [
+      { name: 'Manual Testing',  Icon: FaCode,      color: '#60a5fa' },
+      { name: 'Selenium',        Icon: SiSelenium,  color: '#4ade80' },
+      { name: 'Playwright',      Icon: FaCode,      color: '#22d3ee' },
+      { name: 'Test Case Design',Icon: FaDatabase,  color: '#a855f7' },
+      { name: 'Jira',            Icon: SiJira,      color: '#3b82f6' },
+      { name: 'Postman',         Icon: SiPostman,   color: '#f97316' },
+    ],
+  },
+  {
+    id: 'tools',
+    label: '07. Tools',
+    skills: [
+      { name: 'Git / GitHub', Icon: FaGitAlt,    color: '#f97316' },
+      { name: 'Linux',        Icon: FaLinux,     color: '#facc15' },
+      { name: 'VS Code',      Icon: FaCode,      color: '#60a5fa' },
+      { name: 'MS Excel',     Icon: FaFileExcel, color: '#4ade80' },
+    ],
+  },
 ];
 
-const categories = ['Programming Languages', 'Data Science Tools', 'Agentic AI Tools', 'Databases', 'Frameworks & Web', 'Testing & QA Tools', 'Version Control & Tools'];
+const SkillsSection = () => (
+  <section id="skills" className={`${styles.skills} section-padding dot-grid`}>
+    <div className="container">
+      <motion.h2
+        className="section-title"
+        initial={{ opacity: 0, y: 22 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <span className="label">04. skills</span>
+        Technical Skills
+      </motion.h2>
 
-const getLevelText = (level) => {
-  if (level >= 90) return 'Expert';
-  if (level >= 80) return 'Advanced';
-  if (level >= 70) return 'Intermediate';
-  return 'Beginner';
-};
-
-const getLevelColor = (level) => {
-  if (level >= 90) return 'bg-green-500';
-  if (level >= 80) return 'bg-blue-500';
-  if (level >= 70) return 'bg-yellow-500';
-  return 'bg-gray-500';
-};
-
-const SkillsSection = () => {
-  return (
-    <section id="skills" className="py-20 px-6 bg-white dark:bg-gray-900">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold mb-12 text-blue-700 dark:text-blue-400 text-center">Technical Skills</h2>
-
-        <div className="grid gap-6 sm:gap-8 grid-cols-1 lg:grid-cols-2">
-          {categories.map((category) => (
-            <div key={category} className="group bg-gray-50 dark:bg-gray-800 rounded-xl p-6 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 border border-transparent hover:border-blue-200 dark:hover:border-blue-800">
-              <h3 className="text-xl font-semibold mb-6 text-gray-800 dark:text-gray-200 border-b border-gray-200 dark:border-gray-700 pb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
-                {category}
-              </h3>
-              <div className="space-y-4">
-                {skills
-                  .filter(skill => skill.category === category)
-                  .map((skill) => (
-                    <div key={skill.name} className="group/skill">
-                      <div className="flex items-center justify-between mb-2">
-                        <div className="flex items-center space-x-3">
-                          <div className="text-2xl group-hover/skill:scale-110 transition-transform duration-200">
-                            {skill.icon}
-                          </div>
-                          <span className="font-medium text-gray-700 dark:text-gray-300 group-hover/skill:text-blue-600 dark:group-hover/skill:text-blue-400 transition-colors duration-200">
-                            {skill.name}
-                          </span>
-                        </div>
-                        <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
-                          {getLevelText(skill.level)}
-                        </span>
-                      </div>
-
-                      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-                        <div
-                          className={`h-2.5 rounded-full transition-all duration-1000 ease-out ${getLevelColor(skill.level)}`}
-                          style={{ width: `${skill.level}%` }}
-                        ></div>
-                      </div>
-                    </div>
-                  ))}
-              </div>
+      <div className={styles.grid}>
+        {CATEGORIES.map((cat, ci) => (
+          <motion.div
+            key={cat.id}
+            className={styles.categoryCard}
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-40px' }}
+            transition={{ duration: 0.45, delay: ci * 0.06 }}
+          >
+            <h3 className={styles.catLabel}>{cat.label}</h3>
+            <div className={styles.pillGrid}>
+              {cat.skills.map((skill, si) => (
+                <motion.div
+                  key={skill.name}
+                  className={styles.pill}
+                  whileHover={{ y: -4, scale: 1.04 }}
+                  transition={{ duration: 0.15 }}
+                >
+                  <skill.Icon
+                    style={{ color: skill.color, fontSize: '1rem', flexShrink: 0 }}
+                  />
+                  <span>{skill.name}</span>
+                </motion.div>
+              ))}
             </div>
-          ))}
-        </div>
+          </motion.div>
+        ))}
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default SkillsSection;

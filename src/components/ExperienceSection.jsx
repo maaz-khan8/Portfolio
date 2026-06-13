@@ -1,128 +1,174 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import styles from './ExperienceSection.module.css';
 
-const experiences = [
+const EXPERIENCE = [
   {
     title: 'SQA Intern',
-    org: 'Think Digitally – Karachi, Pakistan',
+    org: 'Think Digitally',
+    location: 'Karachi, Pakistan',
     duration: 'March 2026 – June 2026',
-    desc: 'Conducting end-to-end manual and functional testing of a law application covering test case design, execution, defect reporting, and bug tracking aligned with STLC.'
+    current: true,
+    bullets: [
+      'Conducted end-to-end manual and functional testing of a law application covering test case design, execution, defect reporting, and bug tracking aligned with STLC.',
+    ],
   },
   {
     title: 'Data Science Intern',
-    org: '10Pearls – Karachi, Pakistan',
+    org: '10Pearls',
+    location: 'Karachi, Pakistan',
     duration: 'September 2025 – November 2025',
-    desc: 'Built a multi-horizon AQI forecasting system (Random Forest, Ridge Regression) deployed via Hopsworks with automated retraining pipelines, SHAP explainability, and a real-time Streamlit alerting dashboard. Engineered feature pipelines and managed model versioning on Hopsworks Feature Store ensuring reproducibility and scalable deployment.'
+    current: false,
+    bullets: [
+      'Built a multi-horizon AQI forecasting system (Random Forest, Ridge Regression) deployed via Hopsworks with automated retraining pipelines, SHAP explainability, and a real-time Streamlit alerting dashboard.',
+      'Engineered feature pipelines and managed model versioning on Hopsworks Feature Store ensuring reproducibility and scalable deployment.',
+    ],
   },
   {
     title: 'Data & AI Intern',
-    org: 'Bank Islami Pakistan Ltd. – Karachi, Pakistan',
+    org: 'Bank Islami Pakistan Ltd.',
+    location: 'Karachi, Pakistan',
     duration: 'July 2025 – August 2025',
-    desc: 'Designed interactive QlikView dashboards to visualize key financial metrics, enabling data-driven executive decision-making across the organization. Performed data cleaning, transformation, and validation across large financial datasets in a regulated banking environment, improving internal reporting accuracy.'
+    current: false,
+    bullets: [
+      'Designed interactive QlikView dashboards to visualize key financial metrics, enabling data-driven executive decision-making.',
+      'Performed data cleaning, transformation, and validation across large financial datasets in a regulated banking environment.',
+    ],
   },
   {
     title: 'Private Tutor',
     org: 'Self-Employed',
-    duration: '2022 - Present',
-    desc: 'Tutored O-Level students in Mathematics, covering algebra, geometry, and mathematical fundamentals.'
-  },
-  {
-    title: 'Co-Head of Fraction Ahead',
-    org: 'Rubik 5.0 - Credo College',
-    duration: '2023',
-    desc: 'Led the design and development of challenging math questions for the "Fraction Ahead" module in Rubik 5.0, a college-level competitive event.'
+    location: '',
+    duration: '2022 – Present',
+    current: false,
+    bullets: [
+      'Tutored O-Level students in Mathematics, covering algebra, geometry, and mathematical fundamentals.',
+    ],
   },
 ];
 
-const certifications = [
+const EDUCATION = [
+  {
+    title: 'BS Computer Science',
+    org: 'FAST-NUCES, Karachi',
+    duration: 'Expected June 2026',
+    desc: 'CGPA: 3.29 / 4.00 · Focused on software engineering, data science, and computer science fundamentals.',
+  },
+  {
+    title: 'A-Levels',
+    org: 'Credo College',
+    duration: '2020 – 2022',
+    desc: 'Grades: A, A, B',
+  },
+  {
+    title: 'O-Levels',
+    org: 'Karachi Public High School',
+    duration: '2019 – 2020',
+    desc: 'Grades: 5 A*, 2 A, 2 B',
+  },
+];
+
+const CERTIFICATIONS = [
   {
     title: 'Supervised Machine Learning: Regression and Classification',
     org: 'Coursera',
     duration: 'Completed',
-    desc: 'Comprehensive course covering machine learning algorithms, regression techniques, and classification methods for data analysis and predictive modeling.'
+    desc: 'ML algorithms, regression techniques, and classification methods for data analysis and predictive modeling.',
   },
   {
     title: 'What is Data Science?',
     org: 'Coursera',
     duration: 'Completed',
-    desc: 'Foundational course exploring data science concepts, methodologies, and tools used in modern data analysis and business intelligence.'
+    desc: 'Foundational data science concepts, methodologies, and tools for modern analytics and business intelligence.',
   },
 ];
 
-const education = [
-  {
-    title: 'Bachelor of Science in Computer Science',
-    org: 'FAST-NUCES, Karachi',
-    duration: 'Expected Graduation: June 2026',
-    desc: 'CGPA: 3.29 / 4.00 | Focused on software engineering, data science, and computer science fundamentals.'
-  },
-  {
-    title: 'A-levels',
-    org: 'Credo College',
-    duration: '2020 - 2022',
-    desc: 'Grades: A, A, B | Completed advanced level studies with strong academic performance.'
-  },
-  {
-    title: 'O-levels',
-    org: 'Karachi Public High School',
-    duration: '2019 - 2020',
-    desc: 'Grades: 5 A*, 2 A, 2 B | Excellent foundation in core subjects with outstanding academic achievements.'
-  },
-];
+const TimelineEntry = ({ item, index, accentClass }) => (
+  <motion.div
+    className={`${styles.entry} ${item.current ? styles.entryCurrent : ''}`}
+    initial={{ opacity: 0, x: -24 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    viewport={{ once: true, margin: '-40px' }}
+    transition={{ duration: 0.45, delay: index * 0.08 }}
+  >
+    <div className={`${styles.dot} ${accentClass}`} />
+    <div className={styles.entryContent}>
+      <div className={styles.entryHeader}>
+        <span className={styles.entryTitle}>{item.title}</span>
+        {item.current && <span className={styles.currentBadge}>Current</span>}
+      </div>
+      <div className={styles.entryOrg}>
+        {item.org}{item.location ? ` · ${item.location}` : ''}
+      </div>
+      <div className={styles.entryDuration}>{item.duration}</div>
+      {item.bullets ? (
+        <ul className={styles.bullets}>
+          {item.bullets.map((b, i) => <li key={i}>{b}</li>)}
+        </ul>
+      ) : (
+        <p className={styles.entryDesc}>{item.desc}</p>
+      )}
+    </div>
+  </motion.div>
+);
 
-const ExperienceSection = () => {
-  return (
-    <section id="experience" className="py-16 px-4 sm:px-6 bg-gray-50 dark:bg-gray-800">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold mb-10 text-blue-700 dark:text-blue-400">Experience, Education & Certifications</h2>
-        
-        <div className="mb-12">
-          <h3 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-200">Experience</h3>
-          <div className="border-l-4 border-blue-200 dark:border-blue-700 pl-8">
-            {experiences.map((item, idx) => (
-              <div key={idx} className="mb-10 relative">
-                <div className="absolute -left-5 top-1 w-3 h-3 bg-blue-600 dark:bg-blue-400 rounded-full border-2 border-white dark:border-gray-900"></div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{item.title}</h3>
-                <div className="text-blue-700 dark:text-blue-400 font-medium">{item.org}</div>
-                <div className="text-sm text-gray-500 dark:text-gray-400 mb-2">{item.duration}</div>
-                <p className="text-gray-700 dark:text-gray-300">{item.desc}</p>
-              </div>
-            ))}
-          </div>
+const SubSection = ({ title, items, accentClass, indexOffset = 0 }) => (
+  <div className={styles.subSection}>
+    <h3 className={`${styles.subHeading} ${accentClass}`}>{title}</h3>
+    <div className={styles.timeline}>
+      {items.map((item, i) => (
+        <TimelineEntry
+          key={item.title}
+          item={item}
+          index={i + indexOffset}
+          accentClass={accentClass}
+        />
+      ))}
+    </div>
+  </div>
+);
+
+const ExperienceSection = () => (
+  <section id="experience" className={`${styles.section} section-padding`}>
+    <div className="container">
+      <motion.h2
+        className="section-title"
+        initial={{ opacity: 0, y: 22 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <span className="label">05. experience</span>
+        Experience, Education &amp; Certifications
+      </motion.h2>
+
+      <div className={styles.columns}>
+        {/* Left: Experience */}
+        <div className={styles.col}>
+          <SubSection
+            title="Experience"
+            items={EXPERIENCE}
+            accentClass={styles.dotAccent}
+          />
+          <SubSection
+            title="Certifications"
+            items={CERTIFICATIONS}
+            accentClass={styles.dotPurple}
+            indexOffset={EXPERIENCE.length}
+          />
         </div>
 
-        <div className="mb-12">
-          <h3 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-200">Certifications</h3>
-          <div className="border-l-4 border-purple-200 dark:border-purple-700 pl-8">
-            {certifications.map((item, idx) => (
-              <div key={idx} className="mb-10 relative">
-                <div className="absolute -left-5 top-1 w-3 h-3 bg-purple-600 dark:bg-purple-400 rounded-full border-2 border-white dark:border-gray-900"></div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{item.title}</h3>
-                <div className="text-purple-700 dark:text-purple-400 font-medium">{item.org}</div>
-                <div className="text-sm text-gray-500 dark:text-gray-400 mb-2">{item.duration}</div>
-                <p className="text-gray-700 dark:text-gray-300">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div>
-          <h3 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-200">Education</h3>
-          <div className="border-l-4 border-green-200 dark:border-green-700 pl-8">
-            {education.map((item, idx) => (
-              <div key={idx} className="mb-10 relative">
-                <div className="absolute -left-5 top-1 w-3 h-3 bg-green-600 dark:bg-green-400 rounded-full border-2 border-white dark:border-gray-900"></div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{item.title}</h3>
-                <div className="text-green-700 dark:text-green-400 font-medium">{item.org}</div>
-                <div className="text-sm text-gray-500 dark:text-gray-400 mb-2">{item.duration}</div>
-                <p className="text-gray-700 dark:text-gray-300">{item.desc}</p>
-              </div>
-            ))}
-          </div>
+        {/* Right: Education */}
+        <div className={styles.col}>
+          <SubSection
+            title="Education"
+            items={EDUCATION}
+            accentClass={styles.dotCyan}
+          />
         </div>
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default ExperienceSection;
-

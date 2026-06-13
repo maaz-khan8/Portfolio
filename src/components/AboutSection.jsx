@@ -1,34 +1,96 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { FaReact, FaNodeJs, FaPython, FaGitAlt } from 'react-icons/fa';
-import { SiDotnet } from 'react-icons/si';
+import { SiDotnet, SiNestjs, SiNextdotjs } from 'react-icons/si';
+import styles from './AboutSection.module.css';
 
-const AboutSection = () => {
-  return (
-    <section id="about" className="py-20 px-6 bg-white dark:bg-gray-900">
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-12 text-center md:text-left">
-        <div className="transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-blue-400 dark:hover:border-blue-500 w-48 h-64 rounded-xl shadow-lg border-4 border-blue-200 dark:border-blue-700 bg-white dark:bg-gray-800 overflow-hidden">
-          <img src={process.env.PUBLIC_URL + '/pic2.jpg'} alt="Profile" className="w-full h-full object-cover rounded-xl" />
-        </div>
-        <div className="flex-1">
-          <h2 className="text-3xl font-bold mb-4 text-blue-700 dark:text-blue-400">About Me</h2>
-          <p className="mb-2">Computer Science undergraduate at FAST-NUCES, Karachi (CGPA: 3.29) with industry experience spanning data science, AI, full-stack development, and software quality assurance. Currently an SQA Intern at Think Digitally, conducting end-to-end manual and functional testing aligned with STLC.</p>
-          <p className="mb-2">Previously a Data Science Intern at 10Pearls, where I built a multi-horizon AQI forecasting system with ensemble ML models, Hopsworks deployment, and SHAP explainability. Also served as a Data &amp; AI Intern at Bank Islami Pakistan Ltd., designing QlikView dashboards and handling large financial datasets in a regulated environment.</p>
-          <p className="mb-4">I have built full-stack and AI-driven systems including TripVerse — a multi-role fintech/travel platform with Stripe payments, Gemini AI, and Socket.IO — and an Automated Contract Risk Analysis pipeline using multi-agent AI and RAG. I thrive on delivering production-grade solutions end-to-end.</p>
-          <div className="flex flex-wrap gap-4 items-center mb-4">
-            <div className="text-blue-500 text-3xl" title="React">{React.createElement(FaReact)}</div>
-            <div className="text-green-600 text-3xl" title="Node.js">{React.createElement(FaNodeJs)}</div>
-            <div className="text-yellow-500 text-3xl" title="Python">{React.createElement(FaPython)}</div>
-            <div className="text-orange-500 text-3xl" title="Git">{React.createElement(FaGitAlt)}</div>
-            <div className="text-purple-700 text-3xl" title=".NET">{React.createElement(SiDotnet)}</div>
+const TECH = [
+  { Icon: FaReact,     label: 'React',   color: '#61dafb' },
+  { Icon: FaPython,    label: 'Python',  color: '#60a5fa' },
+  { Icon: SiNestjs,    label: 'NestJS',  color: '#e0234e' },
+  { Icon: SiNextdotjs, label: 'Next.js', color: 'var(--text-primary)' },
+  { Icon: FaNodeJs,    label: 'Node.js', color: '#4ade80' },
+  { Icon: FaGitAlt,    label: 'Git',     color: '#f97316' },
+  { Icon: SiDotnet,    label: '.NET',    color: '#a855f7' },
+];
+
+const SOFT = ['Teamwork', 'Communication', 'Problem-solving', 'Adaptability', 'Leadership'];
+
+const inView = (delay = 0) => ({
+  initial:    { opacity: 0, y: 22 },
+  whileInView:{ opacity: 1, y: 0  },
+  viewport:   { once: true, margin: '-60px' },
+  transition: { duration: 0.5, delay, ease: [0.25, 0.46, 0.45, 0.94] },
+});
+
+const AboutSection = () => (
+  <section id="about" className={`${styles.about} section-padding`}>
+    <div className="container">
+      <motion.h2 className="section-title" {...inView(0)}>
+        <span className="label">01. about</span>
+        About Me
+      </motion.h2>
+
+      <div className={styles.grid}>
+        {/* ── Photo ─────────────────────────────────────── */}
+        <motion.div
+          className={styles.photoCol}
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
+          <div className={styles.photoFrame}>
+            <img
+              src={`${process.env.PUBLIC_URL}/pic2.jpg`}
+              alt="Maaz Khan"
+              className={styles.photo}
+            />
+            <div className={styles.photoOverlay} aria-hidden />
           </div>
-          <div className="text-gray-700 dark:text-gray-300 text-sm">
-            <strong>Soft Skills:</strong> Teamwork, Communication, Problem-solving, Adaptability, Leadership
-          </div>
+          <div className={styles.photoGlow} aria-hidden />
+        </motion.div>
+
+        {/* ── Text ──────────────────────────────────────── */}
+        <div className={styles.textCol}>
+          <motion.p {...inView(0.08)} className={styles.bio}>
+            Computer Science undergraduate at FAST-NUCES, Karachi (CGPA: 3.29) with industry experience
+            spanning data science, AI, full-stack development, and software quality assurance. Currently
+            an SQA Intern at Think Digitally, conducting end-to-end manual and functional testing aligned with STLC.
+          </motion.p>
+          <motion.p {...inView(0.16)} className={styles.bio}>
+            Previously a Data Science Intern at 10Pearls, building a multi-horizon AQI forecasting system
+            with ensemble ML, Hopsworks deployment, and SHAP explainability. Also served as a Data &amp; AI
+            Intern at Bank Islami Pakistan Ltd., designing QlikView dashboards for executive decision-making
+            in a regulated banking environment.
+          </motion.p>
+          <motion.p {...inView(0.22)} className={styles.bio}>
+            I have delivered full-stack and AI-driven systems including TripVerse — a multi-role fintech/travel
+            platform with Stripe, Gemini AI, and Socket.IO — and an Automated Contract Risk Analysis pipeline
+            using multi-agent AI and RAG. I thrive on production-grade solutions end-to-end.
+          </motion.p>
+
+          {/* Tech pills */}
+          <motion.div {...inView(0.3)} className={styles.techGrid}>
+            {TECH.map(({ Icon, label, color }) => (
+              <div key={label} className={styles.techPill}>
+                <Icon style={{ color, fontSize: '1rem', flexShrink: 0 }} />
+                <span>{label}</span>
+              </div>
+            ))}
+          </motion.div>
+
+          {/* Soft skills */}
+          <motion.div {...inView(0.38)} className={styles.softRow}>
+            <span className={styles.softLabel}>Soft Skills</span>
+            <div className={styles.softTags}>
+              {SOFT.map(s => <span key={s} className={styles.softTag}>{s}</span>)}
+            </div>
+          </motion.div>
         </div>
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default AboutSection;
-

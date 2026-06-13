@@ -1,81 +1,110 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import {
+  FaUsers, FaCreditCard, FaBrain, FaBolt, FaPlane, FaBalanceScale,
+} from 'react-icons/fa';
+import styles from './FYPSection.module.css';
 
-const techs = [
+const TECH = [
   'NestJS', 'Next.js', 'PostgreSQL', 'Prisma ORM',
   'Stripe', 'Gemini 2.5 Flash', 'Socket.IO', 'Duffel API', 'Cloud Vision',
 ];
 
-const features = [
-  { label: 'Multi-Role Platform', desc: 'Client, Driver, Hotel Manager, and Admin roles with tailored dashboards and access control.' },
-  { label: 'Fintech & Payments', desc: 'Stripe payments, wallet management, commission tracking, and automated refund workflows.' },
-  { label: 'AI Travel Assistant', desc: 'Gemini 2.5 Flash powers a context-aware assistant with real-time geospatial data and monument recognition via Cloud Vision.' },
-  { label: 'Real-Time Systems', desc: 'Socket.IO live chat, dynamic surge pricing, and 17 notification event types.' },
-  { label: 'Flight & Hotel Booking', desc: 'Unified transport, hotel, and flight booking via Duffel API with end-to-end booking management.' },
-  { label: 'Dispute Resolution', desc: 'Hybrid AI-human dispute resolution workflow for handling conflicts across all service types.' },
+const FEATURES = [
+  { Icon: FaUsers,        color: '#a855f7', title: 'Multi-Role Platform',  desc: 'Client, Driver, Hotel Manager & Admin — each with a tailored dashboard and RBAC.' },
+  { Icon: FaCreditCard,   color: '#4ade80', title: 'Fintech & Payments',   desc: 'Stripe integration: wallet management, commission tracking, and automated refunds.' },
+  { Icon: FaBrain,        color: '#60a5fa', title: 'AI Travel Assistant',  desc: 'Gemini 2.5 Flash with real-time geospatial data and Cloud Vision monument recognition.' },
+  { Icon: FaBolt,         color: '#fbbf24', title: 'Real-Time Systems',    desc: 'Socket.IO live chat, dynamic surge pricing, and 17 notification event types.' },
+  { Icon: FaPlane,        color: '#22d3ee', title: 'Unified Booking',      desc: 'Transport, hotel & flight booking via Duffel API with end-to-end booking management.' },
+  { Icon: FaBalanceScale, color: '#f97316', title: 'Dispute Resolution',   desc: 'Hybrid AI-human workflow for resolving conflicts across all service types.' },
 ];
 
-const FYPSection = () => {
-  return (
-    <section id="fyp" className="py-20 px-6 bg-gray-50 dark:bg-gray-800">
-      <div className="max-w-5xl mx-auto">
-        <div className="flex items-center gap-4 mb-2">
-          <h2 className="text-3xl font-bold text-blue-700 dark:text-blue-400">Final Year Project</h2>
-          <span className="px-3 py-1 bg-blue-600 text-white text-sm font-semibold rounded-full">FYP</span>
+const inView = (delay = 0) => ({
+  initial:    { opacity: 0, y: 24 },
+  whileInView:{ opacity: 1, y: 0  },
+  viewport:   { once: true, margin: '-60px' },
+  transition: { duration: 0.5, delay, ease: [0.25, 0.46, 0.45, 0.94] },
+});
+
+const FYPSection = () => (
+  <section id="fyp" className={`${styles.fyp} section-padding`}>
+    <div className="container">
+      <motion.h2 className="section-title" {...inView(0)}>
+        <span className="label">03. fyp</span>
+        Final Year Project
+      </motion.h2>
+
+      <motion.div
+        className={styles.card}
+        initial={{ opacity: 0, y: 36 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-60px' }}
+        transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+      >
+        {/* Top accent banner */}
+        <div className={styles.banner}>
+          <span className={styles.bannerDot} />
+          Final Year Project — FAST-NUCES Karachi &nbsp;·&nbsp; 2025 / 2026
+          <span className={styles.fypTag}>FYP</span>
         </div>
-        <p className="text-gray-500 dark:text-gray-400 mb-8 text-sm">FAST-NUCES Karachi — 2025/2026</p>
 
-        <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl border border-blue-100 dark:border-blue-900 overflow-hidden">
-          {/* Header */}
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 px-8 py-6">
-            <h3 className="text-2xl font-bold text-white mb-1">TripVerse</h3>
-            <p className="text-blue-100 text-lg">AI Travel & Fintech Platform</p>
-          </div>
+        <div className={styles.body}>
+          {/* ── Left: info ──────────────────────────────── */}
+          <div className={styles.infoCol}>
+            <h3 className={styles.projectName}>TripVerse</h3>
+            <p className={styles.tagline}>AI Travel &amp; Fintech Platform</p>
 
-          <div className="p-8">
-            {/* Description */}
-            <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-              A full-stack multi-role platform unifying transport, hotel, and flight booking with integrated Stripe payments,
-              wallet management, commission tracking, and automated refunds — built with an architecture directly applicable
-              to core banking and fintech systems. Powered by Gemini 2.5 Flash for context-aware AI assistance, real-time
-              communication via Socket.IO, and a hybrid AI-human dispute resolution workflow.
+            <p className={styles.desc}>
+              A full-stack multi-role platform unifying transport, hotel, and flight booking with
+              Stripe payments, wallet management, commission tracking, and automated refunds — built
+              with an architecture directly applicable to core banking and fintech systems.
+            </p>
+            <p className={styles.desc}>
+              Powered by Gemini 2.5 Flash for context-aware AI assistance, real-time communication
+              via Socket.IO, Cloud Vision for monument recognition, dynamic surge pricing, and a
+              hybrid AI-human dispute resolution workflow.
             </p>
 
-            {/* Feature grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-              {features.map((f) => (
-                <div key={f.label} className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 border border-gray-100 dark:border-gray-700">
-                  <div className="font-semibold text-blue-700 dark:text-blue-400 mb-1">{f.label}</div>
-                  <div className="text-gray-600 dark:text-gray-400 text-sm">{f.desc}</div>
-                </div>
-              ))}
-            </div>
-
             {/* Tech stack */}
-            <div>
-              <p className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-3">Tech Stack</p>
-              <div className="flex flex-wrap gap-2">
-                {techs.map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium border border-blue-100 dark:border-blue-800"
-                  >
-                    {tech}
-                  </span>
+            <div className={styles.techSection}>
+              <span className={styles.techLabel}>Tech Stack</span>
+              <div className={styles.techPills}>
+                {TECH.map(t => (
+                  <span key={t} className={styles.techPill}>{t}</span>
                 ))}
               </div>
             </div>
 
-            {/* Footer note */}
-            <div className="mt-8 pt-6 border-t border-gray-100 dark:border-gray-700">
-              <p className="text-sm text-gray-400 dark:text-gray-500 italic">
-                Source code is not publicly available — this is a Final Year Project submission.
-              </p>
-            </div>
+            <p className={styles.privateNote}>
+              🔒 Source code is not publicly available — this is an FYP submission.
+            </p>
+          </div>
+
+          {/* ── Right: feature grid ──────────────────────── */}
+          <div className={styles.featureCol}>
+            {FEATURES.map(({ Icon, color, title, desc }, i) => (
+              <motion.div
+                key={title}
+                className={styles.featureCard}
+                initial={{ opacity: 0, x: 24 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.07 }}
+              >
+                <span className={styles.featureIcon}>
+                  <Icon style={{ color, fontSize: '1.05rem' }} />
+                </span>
+                <div>
+                  <div className={styles.featureTitle}>{title}</div>
+                  <div className={styles.featureDesc}>{desc}</div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
-      </div>
-    </section>
-  );
-};
+      </motion.div>
+    </div>
+  </section>
+);
 
 export default FYPSection;

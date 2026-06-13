@@ -1,28 +1,59 @@
-import React, { useState } from 'react';
-import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
+import styles from './ContactSection.module.css';
+
+const SOCIALS = [
+  {
+    Icon: FaGithub,
+    label: 'GitHub',
+    sub: 'maaz-khan8',
+    href: 'https://github.com/maaz-khan8',
+    color: 'var(--text-primary)',
+    glow: 'rgba(241, 245, 249, 0.15)',
+  },
+  {
+    Icon: FaLinkedin,
+    label: 'LinkedIn',
+    sub: 'maaz-khan-5b9b12240',
+    href: 'https://www.linkedin.com/in/maaz-khan-5b9b12240/',
+    color: '#0a66c2',
+    glow: 'rgba(10, 102, 194, 0.3)',
+  },
+  {
+    Icon: FaEnvelope,
+    label: 'Email',
+    sub: 'maaz.khan20307@gmail.com',
+    href: 'mailto:maaz.khan20307@gmail.com',
+    color: '#f87171',
+    glow: 'rgba(248, 113, 113, 0.25)',
+  },
+];
+
+const inView = (delay = 0) => ({
+  initial:    { opacity: 0, y: 22 },
+  whileInView:{ opacity: 1, y: 0  },
+  viewport:   { once: true },
+  transition: { duration: 0.5, delay },
+});
 
 const ContactSection = () => {
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [form, setForm]           = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [loading, setLoading]     = useState(false);
+  const [error, setError]         = useState('');
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
+  const handleChange = e =>
+    setForm(f => ({ ...f, [e.target.name]: e.target.value }));
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async e => {
     e.preventDefault();
     setLoading(true);
     setError('');
-
     try {
-      // Use a simple form submission service that actually sends emails
-      const response = await fetch('https://formspree.io/f/xwpbyplw', {
+      const res = await fetch('https://formspree.io/f/xwpbyplw', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           name: form.name,
           email: form.email,
@@ -30,110 +61,152 @@ const ContactSection = () => {
           _subject: `Portfolio Contact from ${form.name}`,
         }),
       });
-
-      if (response.ok) {
-        setSubmitted(true);
-        setForm({ name: '', email: '', message: '' });
-      } else {
-        throw new Error('Failed to send message');
-      }
-    } catch (err) {
-      console.error('Email sending failed:', err);
-      setError('Failed to send message. Please contact me directly at maaz.khan90810@gmail.com or try again later.');
+      if (!res.ok) throw new Error();
+      setSubmitted(true);
+      setForm({ name: '', email: '', message: '' });
+    } catch {
+      setError('Failed to send. Please email me directly at maaz.khan90810@gmail.com');
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <section id="contact" className="py-16 px-4 sm:px-6 bg-white dark:bg-gray-900">
-      <div className="max-w-3xl mx-auto">
-        <h2 className="text-3xl font-bold mb-10 text-blue-700 dark:text-blue-400">Contact</h2>
-        <div className="bg-gray-50 dark:bg-gray-800 rounded-lg shadow-lg p-8">
-          {submitted ? (
-            <div className="text-center">
-              <div className="text-green-600 dark:text-green-400 font-semibold text-lg mb-2">
-                Thank you for reaching out!
-              </div>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Your message has been sent successfully. I'll get back to you as soon as possible.
-              </p>
-              <button 
-                onClick={() => setSubmitted(false)}
-                className="px-6 py-3 rounded bg-blue-600 text-white font-semibold hover:bg-blue-700 transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                Send another message
-              </button>
-            </div>
-          ) : (
-            <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-              {error && (
-                <div className="text-red-600 dark:text-red-400 text-sm bg-red-50 dark:bg-red-900/20 p-3 rounded-lg">
-                  {error}
-                </div>
-              )}
-              <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                value={form.name}
-                onChange={handleChange}
-                required
-                className="px-4 py-2 rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                value={form.email}
-                onChange={handleChange}
-                required
-                className="px-4 py-2 rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-              />
-              <textarea
-                name="message"
-                placeholder="Your Message"
-                value={form.message}
-                onChange={handleChange}
-                required
-                rows={5}
-                className="px-4 py-2 rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-              />
-              <button 
-                type="submit" 
-                disabled={loading}
-                className="px-6 py-3 rounded bg-blue-600 text-white font-semibold hover:bg-blue-700 transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
-              >
-                {loading ? 'Sending...' : 'Send Message'}
-              </button>
-            </form>
-          )}
-          <div className="mt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+    <section id="contact" className={`${styles.contact} section-padding`}>
+      <div className="container">
+        <motion.h2 className="section-title" {...inView(0)}>
+          <span className="label">06. contact</span>
+          Contact
+        </motion.h2>
 
-            <div className="flex gap-4 text-2xl">
-              <a 
-                href="https://www.linkedin.com/in/maaz-khan-5b9b12240/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="hover:text-blue-700 transform hover:scale-110 transition-all duration-200"
-              >
-                {React.createElement(FaLinkedin)}
-              </a>
-              <a 
-                href="https://github.com/maaz-khan8" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="hover:text-gray-900 dark:hover:text-white transform hover:scale-110 transition-all duration-200"
-              >
-                {React.createElement(FaGithub)}
-              </a>
+        <div className={styles.inner}>
+          {/* ── Left: heading + socials ─────────────────── */}
+          <motion.div className={styles.leftCol} {...inView(0.1)}>
+            <h3 className={styles.cta}>
+              Let's build something
+              <span className="gradient-text"> together.</span>
+            </h3>
+            <p className={styles.ctaSub}>
+              Open to full-time roles, internships, and interesting collaborations.
+              Reach out via any channel below.
+            </p>
+
+            <div className={styles.socials}>
+              {SOCIALS.map(({ Icon, label, sub, href, color, glow }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target={label !== 'Email' ? '_blank' : undefined}
+                  rel="noopener noreferrer"
+                  className={styles.socialCard}
+                  style={{ '--glow': glow }}
+                >
+                  <span className={styles.socialIcon}>
+                    <Icon style={{ color, fontSize: '1.3rem' }} />
+                  </span>
+                  <div className={styles.socialText}>
+                    <span className={styles.socialLabel}>{label}</span>
+                    <span className={styles.socialSub}>{sub}</span>
+                  </div>
+                </a>
+              ))}
             </div>
-          </div>
+          </motion.div>
+
+          {/* ── Right: form ─────────────────────────────── */}
+          <motion.div className={styles.formCard} {...inView(0.2)}>
+            {submitted ? (
+              <div className={styles.successState}>
+                <div className={styles.successIcon}>✓</div>
+                <h4 className={styles.successTitle}>Message sent!</h4>
+                <p className={styles.successText}>
+                  Thanks for reaching out. I'll get back to you as soon as possible.
+                </p>
+                <button
+                  className={`btn-outline ${styles.resetBtn}`}
+                  onClick={() => setSubmitted(false)}
+                >
+                  Send another
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className={styles.form} noValidate>
+                <h4 className={styles.formTitle}>Send a message</h4>
+
+                {error && (
+                  <div className={styles.errorBanner}>{error}</div>
+                )}
+
+                <div className={styles.fieldGroup}>
+                  <label className={styles.label} htmlFor="cf-name">Name</label>
+                  <input
+                    id="cf-name"
+                    type="text"
+                    name="name"
+                    placeholder="Your name"
+                    value={form.name}
+                    onChange={handleChange}
+                    required
+                    className={styles.input}
+                  />
+                </div>
+
+                <div className={styles.fieldGroup}>
+                  <label className={styles.label} htmlFor="cf-email">Email</label>
+                  <input
+                    id="cf-email"
+                    type="email"
+                    name="email"
+                    placeholder="your@email.com"
+                    value={form.email}
+                    onChange={handleChange}
+                    required
+                    className={styles.input}
+                  />
+                </div>
+
+                <div className={styles.fieldGroup}>
+                  <label className={styles.label} htmlFor="cf-message">Message</label>
+                  <textarea
+                    id="cf-message"
+                    name="message"
+                    placeholder="What's on your mind?"
+                    value={form.message}
+                    onChange={handleChange}
+                    required
+                    rows={5}
+                    className={`${styles.input} ${styles.textarea}`}
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className={styles.submitBtn}
+                  disabled={loading}
+                >
+                  {loading ? (
+                    <span className={styles.spinner} aria-hidden />
+                  ) : null}
+                  {loading ? 'Sending…' : 'Send Message'}
+                </button>
+              </form>
+            )}
+          </motion.div>
         </div>
       </div>
+
+      {/* Footer note */}
+      <motion.p
+        className={styles.footer}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.4, duration: 0.5 }}
+      >
+        Built with React · Designed with care · Maaz Khan © 2026
+      </motion.p>
     </section>
   );
 };
 
 export default ContactSection;
-
