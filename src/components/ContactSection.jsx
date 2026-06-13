@@ -39,7 +39,7 @@ const ContactSection = () => {
       }
     } catch (err) {
       console.error('Email sending failed:', err);
-      setError('Failed to send message. Please contact me directly at maaz.khan20307@gmail.com or try again later.');
+      setError('Failed to send message. Please contact me directly at maaz.khan90810@gmail.com or try again later.');
     } finally {
       setLoading(false);
     }

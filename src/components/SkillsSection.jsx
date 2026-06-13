@@ -1,39 +1,49 @@
 import React from 'react';
-import { FaJs, FaPython, FaReact, FaGitAlt, FaDatabase, FaLinux, FaChartLine, FaNodeJs, FaFileExcel, FaCode } from 'react-icons/fa';
-import { SiCplusplus, SiC, SiDotnet, SiTailwindcss, SiSelenium, SiPandas, SiNumpy, SiScikitlearn, SiExpress, SiMysql } from 'react-icons/si';
+import { FaJs, FaPython, FaReact, FaGitAlt, FaDatabase, FaLinux, FaChartLine, FaNodeJs, FaFileExcel, FaCode, FaRobot, FaBrain } from 'react-icons/fa';
+import { SiCplusplus, SiC, SiDotnet, SiTailwindcss, SiSelenium, SiPandas, SiNumpy, SiScikitlearn, SiExpress, SiMysql, SiNestjs, SiNextdotjs, SiPrisma, SiSocketdotio, SiJira, SiPostman, SiPostgresql } from 'react-icons/si';
 
 const skills = [
   // Programming Languages
   { name: 'C', icon: React.createElement(SiC, { className: "text-blue-600" }), level: 95, category: 'Programming Languages' },
   { name: 'C++', icon: React.createElement(SiCplusplus, { className: "text-blue-700" }), level: 90, category: 'Programming Languages' },
-  { name: 'Python', icon: React.createElement(FaPython, { className: "text-blue-400" }), level: 90, category: 'Programming Languages' },
+  { name: 'Python', icon: React.createElement(FaPython, { className: "text-blue-400" }), level: 70, category: 'Programming Languages' },
   { name: 'JavaScript', icon: React.createElement(FaJs, { className: "text-yellow-400" }), level: 75, category: 'Programming Languages' },
-  
+
   // Data Science Tools
   { name: 'Pandas', icon: React.createElement(SiPandas, { className: "text-purple-600" }), level: 85, category: 'Data Science Tools' },
   { name: 'NumPy', icon: React.createElement(SiNumpy, { className: "text-blue-500" }), level: 80, category: 'Data Science Tools' },
   { name: 'Scikit-learn', icon: React.createElement(SiScikitlearn, { className: "text-orange-500" }), level: 75, category: 'Data Science Tools' },
   { name: 'Matplotlib', icon: React.createElement(FaChartLine, { className: "text-green-600" }), level: 80, category: 'Data Science Tools' },
-  { name: 'Power BI', icon: React.createElement(FaDatabase, { className: "text-yellow-500" }), level: 70, category: 'Data Science Tools' },
-  { name: 'QlikView', icon: React.createElement(FaChartLine, { className: "text-green-600" }), level: 80, category: 'Data Science Tools' },
-  
+  { name: 'QlikView', icon: React.createElement(FaChartLine, { className: "text-green-700" }), level: 80, category: 'Data Science Tools' },
+
+  // Agentic AI Tools
+  { name: 'CrewAI', icon: React.createElement(FaRobot, { className: "text-purple-500" }), level: 70, category: 'Agentic AI Tools' },
+  { name: 'Gemini AI', icon: React.createElement(FaBrain, { className: "text-blue-500" }), level: 70, category: 'Agentic AI Tools' },
+  { name: 'Pinecone', icon: React.createElement(FaDatabase, { className: "text-green-500" }), level: 70, category: 'Agentic AI Tools' },
+
   // Databases
   { name: 'SQL Server', icon: React.createElement(FaDatabase, { className: "text-red-600" }), level: 87, category: 'Databases' },
   { name: 'MySQL', icon: React.createElement(SiMysql, { className: "text-orange-500" }), level: 80, category: 'Databases' },
-  
+  { name: 'PostgreSQL', icon: React.createElement(SiPostgresql, { className: "text-blue-700" }), level: 80, category: 'Databases' },
+
   // Frameworks & Web
   { name: 'React.js', icon: React.createElement(FaReact, { className: "text-blue-500" }), level: 75, category: 'Frameworks & Web' },
-  // { name: 'Node.js', icon: React.createElement(FaNodeJs, { className: "text-green-600" }), level: 70, category: 'Frameworks & Web' },
-  // { name: 'Express.js', icon: React.createElement(SiExpress, { className: "text-gray-600" }), level: 70, category: 'Frameworks & Web' },
-  { name: 'ASP.NET MVC', icon: React.createElement(SiDotnet, { className: "text-purple-600" }), level: 50, category: 'Frameworks & Web' },
-  { name: 'ASP.NET Web Forms', icon: React.createElement(SiDotnet, { className: "text-purple-700" }), level: 75, category: 'Frameworks & Web' },
+  { name: 'NestJS', icon: React.createElement(SiNestjs, { className: "text-red-600" }), level: 70, category: 'Frameworks & Web' },
+  { name: 'Next.js', icon: React.createElement(SiNextdotjs, { className: "text-gray-800 dark:text-gray-200" }), level: 70, category: 'Frameworks & Web' },
+  { name: 'Node.js', icon: React.createElement(FaNodeJs, { className: "text-green-600" }), level: 70, category: 'Frameworks & Web' },
+  { name: 'ASP.NET', icon: React.createElement(SiDotnet, { className: "text-purple-700" }), level: 75, category: 'Frameworks & Web' },
+  { name: 'Prisma ORM', icon: React.createElement(SiPrisma, { className: "text-teal-600" }), level: 70, category: 'Frameworks & Web' },
+  { name: 'Socket.IO', icon: React.createElement(SiSocketdotio, { className: "text-gray-700 dark:text-gray-300" }), level: 70, category: 'Frameworks & Web' },
   { name: 'Tailwind CSS', icon: React.createElement(SiTailwindcss, { className: "text-cyan-500" }), level: 75, category: 'Frameworks & Web' },
-  
+
   // Testing & QA Tools
-  { name: 'Selenium', icon: React.createElement(SiSelenium, { className: "text-green-600" }), level: 80, category: 'Testing & QA Tools' },
   { name: 'Manual Testing', icon: React.createElement(FaDatabase, { className: "text-blue-500" }), level: 85, category: 'Testing & QA Tools' },
+  { name: 'Selenium', icon: React.createElement(SiSelenium, { className: "text-green-600" }), level: 60, category: 'Testing & QA Tools' },
+  { name: 'Playwright', icon: React.createElement(FaCode, { className: "text-teal-500" }), level: 60, category: 'Testing & QA Tools' },
   { name: 'Test Case Design', icon: React.createElement(FaDatabase, { className: "text-purple-500" }), level: 80, category: 'Testing & QA Tools' },
-  
+  { name: 'Jira', icon: React.createElement(SiJira, { className: "text-blue-600" }), level: 75, category: 'Testing & QA Tools' },
+  { name: 'Postman', icon: React.createElement(SiPostman, { className: "text-orange-500" }), level: 75, category: 'Testing & QA Tools' },
+
   // Version Control & Tools
   { name: 'Git/GitHub', icon: React.createElement(FaGitAlt, { className: "text-orange-500" }), level: 90, category: 'Version Control & Tools' },
   { name: 'Linux', icon: React.createElement(FaLinux, { className: "text-yellow-600" }), level: 75, category: 'Version Control & Tools' },
@@ -41,7 +51,7 @@ const skills = [
   { name: 'MS Excel', icon: React.createElement(FaFileExcel, { className: "text-green-600" }), level: 80, category: 'Version Control & Tools' },
 ];
 
-const categories = ['Programming Languages', 'Data Science Tools', 'Databases', 'Frameworks & Web', 'Testing & QA Tools', 'Version Control & Tools'];
+const categories = ['Programming Languages', 'Data Science Tools', 'Agentic AI Tools', 'Databases', 'Frameworks & Web', 'Testing & QA Tools', 'Version Control & Tools'];
 
 const getLevelText = (level) => {
   if (level >= 90) return 'Expert';
@@ -62,7 +72,7 @@ const SkillsSection = () => {
     <section id="skills" className="py-20 px-6 bg-white dark:bg-gray-900">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold mb-12 text-blue-700 dark:text-blue-400 text-center">Technical Skills</h2>
-        
+
         <div className="grid gap-6 sm:gap-8 grid-cols-1 lg:grid-cols-2">
           {categories.map((category) => (
             <div key={category} className="group bg-gray-50 dark:bg-gray-800 rounded-xl p-6 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 border border-transparent hover:border-blue-200 dark:hover:border-blue-800">
@@ -87,9 +97,9 @@ const SkillsSection = () => {
                           {getLevelText(skill.level)}
                         </span>
                       </div>
-                      
+
                       <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-                        <div 
+                        <div
                           className={`h-2.5 rounded-full transition-all duration-1000 ease-out ${getLevelColor(skill.level)}`}
                           style={{ width: `${skill.level}%` }}
                         ></div>
@@ -106,4 +116,3 @@ const SkillsSection = () => {
 };
 
 export default SkillsSection;
-

@@ -2,16 +2,22 @@ import React from 'react';
 
 const experiences = [
   {
+    title: 'SQA Intern',
+    org: 'Think Digitally – Karachi, Pakistan',
+    duration: 'March 2026 – June 2026',
+    desc: 'Conducting end-to-end manual and functional testing of a law application covering test case design, execution, defect reporting, and bug tracking aligned with STLC.'
+  },
+  {
     title: 'Data Science Intern',
-    org: '10pearls – Karachi, Pakistan',
+    org: '10Pearls – Karachi, Pakistan',
     duration: 'September 2025 – November 2025',
-    desc: 'Developed an end-to-end ML system for multi-horizon air quality forecasting using ensemble models (Random Forest, Ridge Regression) deployed via Hopsworks Feature Store. Engineered 124 features from time-series data, implemented EPA-compliant AQI calculation, and created a production-ready Streamlit dashboard with real-time forecasts, automated alerting, SHAP interpretability analysis, and automated retraining via GitHub Actions.'
+    desc: 'Built a multi-horizon AQI forecasting system (Random Forest, Ridge Regression) deployed via Hopsworks with automated retraining pipelines, SHAP explainability, and a real-time Streamlit alerting dashboard. Engineered feature pipelines and managed model versioning on Hopsworks Feature Store ensuring reproducibility and scalable deployment.'
   },
   {
     title: 'Data & AI Intern',
     org: 'Bank Islami Pakistan Ltd. – Karachi, Pakistan',
     duration: 'July 2025 – August 2025',
-    desc: 'Designed and developed interactive dashboards in QlikView, improving internal reporting efficiency. Conducted data cleaning and transformation for large datasets, ensuring accuracy in analytics.'
+    desc: 'Designed interactive QlikView dashboards to visualize key financial metrics, enabling data-driven executive decision-making across the organization. Performed data cleaning, transformation, and validation across large financial datasets in a regulated banking environment, improving internal reporting accuracy.'
   },
   {
     title: 'Private Tutor',
@@ -47,7 +53,7 @@ const education = [
     title: 'Bachelor of Science in Computer Science',
     org: 'FAST-NUCES, Karachi',
     duration: 'Expected Graduation: June 2026',
-    desc: 'CGPA: 3.25 | Focused on software engineering, data science, and computer science fundamentals.'
+    desc: 'CGPA: 3.29 / 4.00 | Focused on software engineering, data science, and computer science fundamentals.'
   },
   {
     title: 'A-levels',

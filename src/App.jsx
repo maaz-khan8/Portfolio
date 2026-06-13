@@ -6,6 +6,7 @@ import AboutSection from './components/AboutSection';
 import ProjectsSection from './components/ProjectsSection';
 import SkillsSection from './components/SkillsSection';
 import ExperienceSection from './components/ExperienceSection';
+import FYPSection from './components/FYPSection';
 import ContactSection from './components/ContactSection';
 import './App.css';
 
@@ -74,12 +75,19 @@ const App = () => {
               >
                 About
               </a>
-              <a 
-                href="#projects" 
+              <a
+                href="#projects"
                 className="relative px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 transform hover:scale-110 font-medium text-lg md:text-base"
                 onClick={() => setNavOpen(false)}
               >
                 Projects
+              </a>
+              <a
+                href="#fyp"
+                className="relative px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 transform hover:scale-110 font-medium text-lg md:text-base"
+                onClick={() => setNavOpen(false)}
+              >
+                FYP
               </a>
               <a 
                 href="#skills" 
@@ -115,6 +123,7 @@ const App = () => {
           <HeroSection />
           <AboutSection />
           <ProjectsSection />
+          <FYPSection />
           <SkillsSection />
           <ExperienceSection />
           <ContactSection />
